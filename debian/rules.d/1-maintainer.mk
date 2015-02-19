@@ -58,6 +58,7 @@ printenv:
 	@echo "uploadnum         = $(uploadnum)"
 	@echo "prev_revisions    = $(prev_revisions)"
 	@echo "prev_revision     = $(prev_revision)"
+	@echo "prev_fullver      = $(prev_fullver)"
 	@echo "abinum            = $(abinum)"
 	@echo "gitver            = $(gitver)"
 	@echo "flavours          = $(flavours)"
