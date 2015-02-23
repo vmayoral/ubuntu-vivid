@@ -3,7 +3,7 @@ amd64	PKGVER-ABINUM	generic		PKGVER-ABINUM-generic		-
 
 i386	PKGVER-ABINUM	generic		PKGVER-ABINUM-generic		-	
 
-armhf	PKGVER-ABINUM	generic		PKGVER-ABINUM-generic		-
+armhf	PKGVER-ABINUM	generic		PKGVER-ABINUM-generic-bcm2709		-
 
 #armhf	PKGVER-ABINUM	generic-lpae		PKGVER-ABINUM-generic-lpae		-
 
