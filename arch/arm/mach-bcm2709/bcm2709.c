@@ -1135,7 +1135,7 @@ void __init bcm2709_init_early(void)
 	init_dma_coherent_pool_size(SZ_4M);
 
 #ifdef CONFIG_OF
-	if (of_allnodes)
+	if (of_root)
 	    use_dt = 1;
 #endif
 }
