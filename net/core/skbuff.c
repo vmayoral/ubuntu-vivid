@@ -63,6 +63,7 @@
 #include <linux/errqueue.h>
 #include <linux/prefetch.h>
 #include <linux/if_vlan.h>
+#include <linux/locallock.h>
 
 #include <net/protocol.h>
 #include <net/dst.h>
@@ -353,7 +354,7 @@ struct netdev_alloc_cache {
 	unsigned int		pagecnt_bias;
 };
 static DEFINE_PER_CPU(struct netdev_alloc_cache, netdev_alloc_cache);
-static DEFINE_PER_CPU(struct netdev_alloc_cache, napi_alloc_cache);
+static DEFINE_LOCAL_IRQ_LOCK(netdev_alloc_lock);
 
 static struct page *__page_frag_refill(struct netdev_alloc_cache *nc,
 				       gfp_t gfp_mask)
@@ -369,23 +370,9 @@ static struct page *__page_frag_refill(struct netdev_alloc_cache *nc,
 		nc->frag.size = PAGE_SIZE << (page ? order : 0);
 	}
 
-	if (unlikely(!page))
-		page = alloc_pages_node(NUMA_NO_NODE, gfp, 0);
-
-	nc->frag.page = page;
-
-	return page;
-}
-
-static void *__alloc_page_frag(struct netdev_alloc_cache __percpu *cache,
-			       unsigned int fragsz, gfp_t gfp_mask)
-{
-	struct netdev_alloc_cache *nc = this_cpu_ptr(cache);
-	struct page *page = nc->frag.page;
-	unsigned int size;
-	int offset;
-
-	if (unlikely(!page)) {
+	local_lock_irqsave(netdev_alloc_lock, flags);
+	nc = this_cpu_ptr(&netdev_alloc_cache);
+	if (unlikely(!nc->frag.page)) {
 refill:
 		page = __page_frag_refill(nc, gfp_mask);
 		if (!page)
@@ -421,19 +408,8 @@ refill:
 	}
 
 	nc->pagecnt_bias--;
-	nc->frag.offset = offset;
-
-	return page_address(page) + offset;
-}
-
-static void *__netdev_alloc_frag(unsigned int fragsz, gfp_t gfp_mask)
-{
-	unsigned long flags;
-	void *data;
-
-	local_irq_save(flags);
-	data = __alloc_page_frag(&netdev_alloc_cache, fragsz, gfp_mask);
-	local_irq_restore(flags);
+end:
+	local_unlock_irqrestore(netdev_alloc_lock, flags);
 	return data;
 }
 
