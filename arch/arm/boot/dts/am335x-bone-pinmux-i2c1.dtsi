@@ -1,0 +1,47 @@
+/*
+ * Copyright (C) 2012 Texas Instruments Incorporated - http://www.ti.com/
+ *		Modified by Víctor Mayoral Vilches <victor@erlerobot.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#include <dt-bindings/board/am335x-bbw-bbb-base.h>
+#include "am335x-peripheral-i2c1.dtsi"
+
+/* cape universal */
+
+/*
+ *&ocp {
+ *	P9_18_pinmux {
+ *		mode = "i2c";
+ *	};
+ *	P9_17_pinmux {
+ *		mode = "i2c";
+ *	};
+ *};
+ *
+ *&dcan0 {
+ *	pinctrl-0 = <>;
+ *};
+ *
+ */
+
+/* standard */
+
+&am33xx_pinmux {
+	i2c1_pins: pinmux_i2c1_pins {
+		pinctrl-single,pins = <
+			/* P9_18: spi0_d1.i2c1_sda */
+			BONE_P9_18 (SLEWCTRL_SLOW | PIN_INPUT_PULLUP | MUX_MODE2)
+			/* P9_17: spi0_cs0.i2c1_scl */
+			BONE_P9_17 (SLEWCTRL_SLOW | PIN_INPUT_PULLUP | MUX_MODE2)
+
+		>;
+	};
+};
+
+&i2c1 {
+	pinctrl-0 = <&i2c1_pins>;
+};
