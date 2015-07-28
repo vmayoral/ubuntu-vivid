@@ -1,0 +1,39 @@
+/*
+ * Copyright (C) 2015 Erle Robotics
+ *		Modified by Víctor Mayoral Vilches from Mirko Denecke and Siddharth Purohit work
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+#include <dt-bindings/board/am335x-bbw-bbb-base.h>
+#include "am335x-peripheral-spi0.dtsi"
+
+&am33xx_pinmux {
+	spi0_pins: pinmux_spi0_pins {
+		pinctrl-single,pins = <
+			0x150 0x30  /* spi0_sclk, SPI0_SCLK P9_22 */
+                  	0x154 0x10  /* spi0_d0, SPI0_MOSI  P9_21 */
+                  	0x158 0x30  /* spi0_d1, SPI0_MISO P9_18 */
+                  	/* setup a dummy CS for the SPI driver to use, then
+                     	setup pin modes for the two real CS lines to
+                     	set them pull-up */
+                  	0x054 0x07  /* led pin, dummy CS */
+                  	0x15C 0x37  /* LSM9DSO_AM CS P9_17 */
+                  	0x09C 0x37  /* LSM9DSO_G CS P8_9 */
+		>;
+	};
+};
+
+&spi0 {
+	pinctrl-0 = <&spi0_pins>;
+
+	spi0_0 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		spi-max-frequency = <24000000>;
+		reg = <0>;
+		compatible = "spidev";
+	};
+};
