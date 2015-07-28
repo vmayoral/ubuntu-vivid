@@ -62,6 +62,11 @@
 #include "am335x-cape-i2c2-eeprom.dtsi"
 */
 
+#include "am335x-peripheral-i2c1.dtsi"
+#include "am335x-bone-pinmux-i2c1.dtsi"
+
+
+
 
 /*
 #include "am335x-cape-bbbmini.dtsi"
