@@ -1,0 +1,49 @@
+/*
+ * Copyright (C) Erle Robotics http://erlerobotics.com
+ *		Víctor Mayoral Vilches <victor@erlerobot.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+&epwmss0 {
+        pinctrl-names = "default";
+	status = "okay";
+};
+
+&ehrpwm0 {
+        pinctrl-names = "default";
+	status = "okay";
+};
+
+&ecap0 {
+        pinctrl-names = "default";
+	status = "okay";
+};
+
+
+&epwmss1 {
+        pinctrl-names = "default";
+	status = "okay";
+};
+
+&ehrpwm1 {
+        pinctrl-names = "default";
+	status = "okay";
+};
+
+&epwmss2 {
+        pinctrl-names = "default";
+	status = "okay";
+};
+
+&ehrpwm2 {
+        pinctrl-names = "default";
+	status = "okay";
+};
+
+&ecap2 {
+        pinctrl-names = "default";
+	status = "okay";
+};
