@@ -1,0 +1,30 @@
+/*
+ * Copyright (C) 2013 CircuitCo
+ * Copyright (C) 2013 Texas Instruments
+ * Copyright (C) 2015 Erle Robotics
+ * 	Adapted by Víctor Mayoral Vilches <victor@erlerobot.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+/* Modified from 
+https://github.com/beagleboard/devicetree-source/blob/master/arch/arm/boot/dts/bone_pwm_P8_36-00A0.dts */
+
+&am33xx_pinmux {
+	pwm_P8_36: pinmux_pwm_P8_36_pins {
+		pinctrl-single,pins = <0x0c8  0x2>; /* P8_36 (ZCZ ball U3) | MODE 2 */
+	};
+};
+
+&ehrpwm1{
+	compatible	= "pwm_test";
+	pwms 		= <&ehrpwm1 0 500000 1>;
+	pwm-names 	= "PWM_P8_36";
+	pinctrl-names	= "default";
+	pinctrl-0	= <&pwm_P8_36>;
+	enabled		= <1>;
+	duty		= <0>;
+	status 		= "okay";
+};
