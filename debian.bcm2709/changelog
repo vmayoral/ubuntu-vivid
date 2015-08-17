@@ -4,6 +4,2364 @@ linux-bcm2709 (3.19.1-14.14) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.19.0-27.29 ]
+
+  * Release Tracking Bug
+    - LP: #1485113
+  * SAUCE: serial: 8250_pci: Add support for Pericom PI7C9X795[1248]
+    - LP: #1480142
+  * SAUCE: i915_bpo: drm/i915/gen8: Add infrastructure to initialize WA
+    batch buffers
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen8: Re-order init pipe_control in lrc mode
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen8: Add WaDisableCtxRestoreArbitration
+    workaround
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen8: Add
+    WaFlushCoherentL3CacheLinesAtContextSwitch workaround
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: Bail out early if WA batch is not available
+    for given Gen
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen8: Add WaClearSlmSpaceAtContextSwitch
+    workaround
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: Update
+    WaFlushCoherentL3CacheLinesAtContextSwitch
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: Enable WA batch buffers for Gen9
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen9: Add WaDisableCtxRestoreArbitration
+    workaround
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: Update wa_ctx_emit() macro as per kernel
+    coding guidelines
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen9: Add
+    WaFlushCoherentL3CacheLinesAtContextSwitch workaround
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen9: Add
+    WaSetDisablePixMaskCammingAndRhwoInCommonSliceChicken
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915:skl: Add WaEnableGapsTsvCreditFix
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: Use two 32bit reads for select 64bit
+    REG_READ ioctls
+    - LP: #1484482
+  * SAUCE: i915_bpo: drm/i915: Replace WARN inside I915_READ64_2x32 with
+    retry loop
+    - LP: #1484482
+  * SAUCE: i915_bpo: drm/i915: Mark PIN_USER binding as GLOBAL_BIND without
+    the aliasing ppgtt
+    - LP: #1484482
+  * SAUCE: i915_bpo: drm/i915: Declare the swizzling unknown for L-shaped
+    configurations
+    - LP: #1484482
+  * SAUCE: i915_bpo: drm/i915/skl: Don't expose the top most plane on gen9
+    display
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: Fixup dp mst encoder selection
+    - LP: #1484482
+  * SAUCE: i915_bpo: drm/i915: Allow parsing of variable size child device
+    entries from VBT
+  * SAUCE: i915_bpo: drm/i915: Allow parsing of variable size child device
+    entries from VBT, addendum v2
+    - LP: #1484482
+  * SAUCE: i915_bpo: drm/i915/skl: WaIgnoreDDIAStrap is forever, always
+    init DDI A
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: reduce indent in i9xx_hpd_irq_handler
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: reduce duplicate conditions in
+    i9xx_hpd_irq_handler
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: reduce indent in intel_hpd_irq_handler
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: group all hotplug related fields into a new
+    struct in dev_priv
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: add for_each_hpd_pin to iterate over hotplug
+    pins
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: simplify conditions for skipping the 2nd hpd
+    loop iterations
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: put back the indent in intel_hpd_irq_handler
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: merge the two hpd loops in
+    intel_hpd_irq_handler to one
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: simplify condition for digital port
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: abstract away platform specific parts from
+    hpd handling
+    - LP: #1484531
+  * [Config] d-i -- Add sfc to nic-modules udeb
+    - LP: #1481490
+  * [Config] CONFIG_DELL_RBTN=m
+    - LP: #1440949
+  * SAUCE: i915_bpo: drm/i915/skl: revert duplicated
+    WaBarrierPerformanceFixDisable:skl
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/skl WaDisableSbeCacheDispatchPortSharing
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/gen9: Implement WaDisableKillLogic for gen 9
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915: Set power domain for DDI-E
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: Set alternate aux for DDI-E
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: eDP can be present on DDI-E
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915/skl: DDI-E and DDI-A shares 4 lanes.
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915/skl: Enable DDI-E
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: Handle HPD when it has actually occurred
+    - LP: #1484531
+  * hv_netvsc: Implement batching in send buffer
+    - LP: #1454892
+  * hv_netvsc: Cleanup the test for freeing skb when we use sendbuf
+    mechanism
+    - LP: #1454892
+  * hv_netvsc: Eliminate memory allocation in the packet send path
+    - LP: #1454892
+  * hv_netvsc: Fix the packet free when it is in skb headroom
+    - LP: #1454892
+  * hv_netvsc: Implement partial copy into send buffer
+    - LP: #1454892
+  * hv_netvsc: Fix a bug in netvsc_start_xmit()
+    - LP: #1454892
+  * Drivers: hv: vmbus: Suport an API to send packet with additional
+    control
+    - LP: #1454892
+  * Drivers: hv: vmbus: Suport an API to send pagebuffers with additional
+    control
+    - LP: #1454892
+  * Drivers: hv: vmbus: Export the vmbus_sendpacket_pagebuffer_ctl()
+    - LP: #1454892
+  * hv_netvsc: Use the xmit_more skb flag to optimize signaling the host
+    - LP: #1454892
+  * powerpc/powernv: Silence SYSPARAM warning on boot
+    - LP: #1478513
+  * dell-rbtn: Dell Airplane Mode Switch driver
+    - LP: #1440949
+  * dell-rbtn: Export notifier for other kernel modules
+  * dell-laptop: Use dell-rbtn instead i8042 filter when possible
+  * VFS: Add a fallthrough flag for marking virtual dentries
+    - LP: #1479468
+  * overlay: Call ovl_drop_write() earlier in ovl_dentry_open()
+    - LP: #1479468
+  * overlayfs: Make f_path always point to the overlay and f_inode to the
+    underlay
+    - LP: #1479468
+  * fix a braino in ovl_d_select_inode()
+    - LP: #1479468
+  * Fix repeated ipmi_si error message
+    - LP: #1483214
+  * drm/atomic: add commit_planes_on_crtc helper
+  * drm/atomic: add drm_atomic_add_affected_planes
+  * drm/atomic: fix out of bounds read in for_each_*_in_state helpers
+  * drm/atomic: add all affected planes in drm_atomic_helper_check_modeset
+  * drm/atomic: Clear crtc_state->active in drm_atomic_helper_set_config.
+  * drm/atomic: Extract needs_modeset function
+  * i915: temporary fix for DP MST docking station NULL pointer dereference
+  * drm/atomic-helper: Add an atomice best_encoder callback
+  * drm/atomic-helpers: Make encoder picking more robust
+  * ieee802154: Fix sockaddr_ieee802154 implicit padding information leak.
+    - LP: #1485110
+  * evm: labeling pseudo filesystems exception
+    - LP: #1485110
+  * sg_start_req(): make sure that there's not too many elements in iovec
+    - LP: #1485110
+  * Btrfs: use kmem_cache_free when freeing entry in inode cache
+    - LP: #1485110
+  * Btrfs: fix race between caching kthread and returning inode to inode
+    cache
+    - LP: #1485110
+  * Btrfs: fix fsync data loss after append write
+    - LP: #1485110
+  * bufferhead: Add _gfp version for sb_getblk()
+    - LP: #1485110
+  * ext4: avoid deadlocks in the writeback path by using sb_getblk_gfp
+    - LP: #1485110
+  * ext4: fix reservation release on invalidatepage for delalloc fs
+    - LP: #1485110
+  * ext4: be more strict when migrating to non-extent based file
+    - LP: #1485110
+  * ext4: correctly migrate a file with a hole at the beginning
+    - LP: #1485110
+  * ext4: replace open coded nofail allocation in ext4_free_blocks()
+    - LP: #1485110
+  * ARM: dts: am57xx-beagle-x15: Provide supply for usb2_phy2
+    - LP: #1485110
+  * ACPI / PNP: Reserve ACPI resources at the fs_initcall_sync stage
+    - LP: #1485110
+  * powerpc/powernv: Fix race in updating core_idle_state
+    - LP: #1485110
+  * cxl: Fix off by one error allowing subsequent mmap page to be accessed
+    - LP: #1485110
+  * drm/radeon: fix HDP flushing
+    - LP: #1485110
+  * drm/radeon: Clean up reference counting and pinning of the cursor BOs
+    - LP: #1485110
+  * drm/radeon: unpin cursor BOs on suspend and pin them again on resume
+    (v2)
+    - LP: #1485110
+  * mm: avoid setting up anonymous pages into file mapping
+    - LP: #1485110
+  * selinux: don't waste ebitmap space when importing NetLabel categories
+    - LP: #1485110
+  * hpfs: kstrdup() out of memory handling
+    - LP: #1485110
+  * hpfs: hpfs_error: Remove static buffer, use vsprintf extension %pV
+    instead
+    - LP: #1485110
+  * cxl: Check if afu is not null in cxl_slbia
+    - LP: #1485110
+  * parisc: Fix some PTE/TLB race conditions and optimize __flush_tlb_range
+    based on timing results
+    - LP: #1485110
+  * 9p: don't leave a half-initialized inode sitting around
+    - LP: #1485110
+  * freeing unlinked file indefinitely delayed
+    - LP: #1485110
+  * clk: qcom: Use parent rate when set rate to pixel RCG clock
+    - LP: #1485110
+  * drivers: clk: st: Incorrect register offset used for lock_status
+    - LP: #1485110
+  * drivers: clk: st: Fix mux bit-setting for Cortex A9 clocks
+    - LP: #1485110
+  * ARM: 8393/1: smp: Fix suspicious RCU usage with ipi tracepoints
+    - LP: #1485110
+  * drivers: clk: st: Fix flexgen lock init
+    - LP: #1485110
+  * iio: adc: rockchip_saradc: add missing MODULE_* data
+    - LP: #1485110
+  * iio: twl4030-madc: Pass the IRQF_ONESHOT flag
+    - LP: #1485110
+  * iio: inv-mpu: Specify the expected format/precision for write channels
+    - LP: #1485110
+  * iio: DAC: ad5624r_spi: fix bit shift of output data value
+    - LP: #1485110
+  * iio: adc: at91_adc: allow to use full range of startup time
+    - LP: #1485110
+  * iio: light: tcs3414: Fix bug preventing to set integration time
+    - LP: #1485110
+  * ALSA: usb-audio: Add MIDI support for Steinberg MI2/MI4
+    - LP: #1485110
+  * iio: tmp006: Check channel info on write
+    - LP: #1485110
+  * dm btree remove: fix bug in redistribute3
+    - LP: #1485110
+  * dm thin: allocate the cell_sort_array dynamically
+    - LP: #1485110
+  * kbuild: Allow arch Makefiles to override {cpp,ld,c}flags
+    - LP: #1485110
+  * ARC: Override toplevel default -O2 with -O3
+    - LP: #1485110
+  * crypto: omap-des - Fix unmapping of dma channels
+    - LP: #1485110
+  * USB: option: add 2020:4000 ID
+    - LP: #1485110
+  * USB: cp210x: add ID for Aruba Networks controllers
+    - LP: #1485110
+  * dm btree: silence lockdep lock inversion in dm_btree_del()
+    - LP: #1485110
+  * usb: musb: host: rely on port_mode to call musb_start()
+    - LP: #1485110
+  * usb: f_mass_storage: limit number of reported LUNs
+    - LP: #1485110
+  * s390/sclp: clear upper register halves in _sclp_print_early
+    - LP: #1485110
+  * drm/rockchip: use drm_gem_mmap helpers
+    - LP: #1485110
+  * drm: add a check for x/y in drm_mode_setcrtc
+    - LP: #1485110
+  * bio integrity: do not assume bio_integrity_pool exists if bioset exists
+    - LP: #1485110
+  * ARM: dts: mx23: fix iio-hwmon support
+    - LP: #1485110
+  * tracing: Have branch tracer use recursive field of task struct
+    - LP: #1485110
+  * drivers: net: cpsw: fix crash while accessing second slave ethernet
+    interface
+    - LP: #1485110
+  * USB: serial: Destroy serial_minors IDR on module exit
+    - LP: #1485110
+  * KVM: VMX: fix vmwrite to invalid VMCS
+    - LP: #1485110
+  * Btrfs: fix memory leak in the extent_same ioctl
+    - LP: #1485110
+  * Btrfs: fix list transaction->pending_ordered corruption
+    - LP: #1485110
+  * can: rcar_can: fix IRQ check
+    - LP: #1485110
+  * can: c_can: Fix default pinmux glitch at init
+    - LP: #1485110
+  * ARM: dts: dra7x-evm: Prevent glitch on DCAN1 pinmux
+    - LP: #1485110
+  * ARC: make sure instruction_pointer() returns unsigned value
+    - LP: #1485110
+  * s390/process: fix sfpc inline assembly
+    - LP: #1485110
+  * Btrfs: fix file corruption after cloning inline extents
+    - LP: #1485110
+  * staging: vt6655: check ieee80211_bss_conf bssid not NULL
+    - LP: #1485110
+  * staging: vt6656: check ieee80211_bss_conf bssid not NULL
+    - LP: #1485110
+  * st: null pointer dereference panic caused by use after kref_put by
+    st_open
+    - LP: #1485110
+  * scsi: fix host max depth checking for the 'queue_depth' sysfs interface
+    - LP: #1485110
+  * drm/radeon: add a dpm quirk for Sapphire Radeon R9 270X 2GB GDDR5
+    - LP: #1485110
+  * drm/radeon: Don't flush the GART TLB if rdev->gart.ptr == NULL
+    - LP: #1485110
+  * drm/radeon: fix user ptr race condition
+    - LP: #1485110
+  * drm/radeon/ci: silence a harmless PCC warning
+    - LP: #1485110
+  * genirq: Prevent resend to interrupts marked IRQ_NESTED_THREAD
+    - LP: #1485110
+  * ARM: 8404/1: dma-mapping: fix off-by-one error in bitmap size check
+    - LP: #1485110
+  * dma-debug: skip debug_dma_assert_idle() when disabled
+    - LP: #1485110
+  * ipv6: Make MLD packets to only be processed locally
+    - LP: #1485110
+  * net: call rcu_read_lock early in process_backlog
+    - LP: #1485110
+  * ip_tunnel: fix ipv4 pmtu check to honor inner ip header df
+    - LP: #1485110
+  * bridge: mdb: start delete timer for temp static entries
+    - LP: #1485110
+  * bridge: mdb: zero out the local br_ip variable before use
+    - LP: #1485110
+  * net: do not process device backlog during unregistration
+    - LP: #1485110
+  * net: graceful exit from netif_alloc_netdev_queues()
+    - LP: #1485110
+  * net: dsa: Fix off-by-one in switch address parsing
+    - LP: #1485110
+  * perf symbols: Store if there is a filter in place
+    - LP: #1485110
+  * perf hists browser: Take the --comm, --dsos, etc filters into account
+    - LP: #1485110
+  * net: dsa: Test array index before use
+    - LP: #1485110
+  * rds: rds_ib_device.refcount overflow
+    - LP: #1485110
+  * Linux 3.19.8-ckt5
+    - LP: #1485110
+  * SAUCE: i915_bpo: drm/i915: Move WaBarrierPerformanceFixDisable:skl to
+    skl code from chv code
+    - LP: #1484486
+  * SAUCE: i915_bpo: drm/i915/skl: enable DDI-E hotplug
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: Enable HDMI on DDI-E
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915: Adding break for one case
+    - LP: #1484531
+  * SAUCE: i915_bpo: drm/i915/skl: Adding DDI_E power well domain
+    - LP: #1484531
+
+  [ Ubuntu: 3.19.0-26.28 ]
+
+  * Release Tracking Bug
+    - LP: #1483630
+  * Revert "Bluetooth: ath3k: Add support of 04ca:300d AR3012 device"
+
+  [ Ubuntu: 3.19.0-26.27 ]
+
+  * Release Tracking Bug
+    - LP: #1479055
+  * [Config] updateconfigs for 3.19.8-ckt4 stable update
+  * [Config] Add MTD_POWERNV_FLASH and OPAL_PRD
+    - LP: #1464560
+  * SAUCE: i915_bpo: drm/i915: Fix divide by zero on watermark update
+    - LP: #1473175
+  * [Config] ACORN_PARTITION=n
+    - LP: #1453117
+  * [Config] Add i40e[vf] to d-i
+    - LP: #1476393
+  * SAUCE: i915_bpo: Rebase to v4.2-rc3
+    - LP: #1473175
+  * SAUCE: i915_bpo: Revert "mm/fault, drm/i915: Use pagefault_disabled()
+    to check for disabled pagefaults"
+    - LP: #1473175
+  * SAUCE: i915_bpo: Revert "drm: i915: Port to new backlight interface
+    selection API"
+    - LP: #1473175
+  * Revert "tools/vm: fix page-flags build"
+    - LP: #1473547
+  * Revert "ALSA: hda - Add mute-LED mode control to Thinkpad"
+    - LP: #1473547
+  * Revert "drm/radeon: adjust pll when audio is not enabled"
+    - LP: #1473547
+  * Revert "crypto: talitos - convert to use be16_add_cpu()"
+    - LP: #1479048
+  * module: Call module notifier on failure after complete_formation()
+    - LP: #1473547
+  * gpio: gpio-kempld: Fix get_direction return value
+    - LP: #1473547
+  * ARM: dts: imx27: only map 4 Kbyte for fec registers
+    - LP: #1473547
+  * ARM: 8356/1: mm: handle non-pmd-aligned end of RAM
+    - LP: #1473547
+  * x86/mce: Fix MCE severity messages
+    - LP: #1473547
+  * mac80211: don't use napi_gro_receive() outside NAPI context
+    - LP: #1473547
+  * iwlwifi: mvm: Free fw_status after use to avoid memory leak
+    - LP: #1473547
+  * iwlwifi: mvm: clean net-detect info if device was reset during suspend
+    - LP: #1473547
+  * drm/plane-helper: Adapt cursor hack to transitional helpers
+    - LP: #1473547
+  * ARM: dts: set display clock correctly for exynos4412-trats2
+    - LP: #1473547
+  * hwmon: (ntc_thermistor) Ensure iio channel is of type IIO_VOLTAGE
+    - LP: #1473547
+  * mfd: da9052: Fix broken regulator probe
+    - LP: #1473547
+  * ALSA: hda - Fix noise on AMD radeon 290x controller
+    - LP: #1473547
+  * lguest: fix out-by-one error in address checking.
+    - LP: #1473547
+  * xfs: xfs_attr_inactive leaves inconsistent attr fork state behind
+    - LP: #1473547
+  * xfs: xfs_iozero can return positive errno
+    - LP: #1473547
+  * fs, omfs: add NULL terminator in the end up the token list
+    - LP: #1473547
+  * omfs: fix sign confusion for bitmap loop counter
+    - LP: #1473547
+  * d_walk() might skip too much
+    - LP: #1473547
+  * dm: fix casting bug in dm_merge_bvec()
+    - LP: #1473547
+  * hwmon: (nct6775) Add missing sysfs attribute initialization
+    - LP: #1473547
+  * hwmon: (nct6683) Add missing sysfs attribute initialization
+    - LP: #1473547
+  * target/pscsi: Don't leak scsi_host if hba is VIRTUAL_HOST
+    - LP: #1473547
+  * net: phy: bcm7xxx: Fix 7425 PHY ID and flags
+    - LP: #1473547
+  * fs/binfmt_elf.c:load_elf_binary(): return -EINVAL on zero-length
+    mappings
+    - LP: #1473547
+  * i2c: hix5hd2: Fix modalias to make module auto-loading work
+    - LP: #1473547
+  * i2c: s3c2410: fix oops in suspend callback for non-dt platforms
+    - LP: #1473547
+  * iio: adis16400: Report pressure channel scale
+    - LP: #1473547
+  * iio: adis16400: Use != channel indices for the two voltage channels
+    - LP: #1473547
+  * iio: adis16400: Compute the scan mask from channel indices
+    - LP: #1473547
+  * iio: adis16400: Fix burst mode
+    - LP: #1473547
+  * iio: adis16400: Fix burst transfer for adis16448
+    - LP: #1473547
+  * USB: serial: ftdi_sio: Add support for a Motion Tracker Development
+    Board
+    - LP: #1473547
+  * iio: adc: twl6030-gpadc: Fix modalias
+    - LP: #1473547
+  * usb: make module xhci_hcd removable
+    - LP: #1473547
+  * usb: host: xhci: add mutex for non-thread-safe data
+    - LP: #1473547
+  * serial: imx: Fix DMA handling for IDLE condition aborts
+    - LP: #1473547
+  * usb: dwc3: gadget: Fix incorrect DEPCMD and DGCMD status macros
+    - LP: #1473547
+  * brcmfmac: avoid null pointer access when brcmf_msgbuf_get_pktid() fails
+    - LP: #1473547
+  * ALSA: usb-audio: Add mic volume fix quirk for Logitech Quickcam Fusion
+    - LP: #1473547
+  * n_tty: Fix auditing support for cannonical mode
+    - LP: #1473547
+  * drivers/base: cacheinfo: handle absence of caches
+    - LP: #1473547
+  * drm/i915/hsw: Fix workaround for server AUX channel clock divisor
+    - LP: #1473547
+  * MIPS: ralink: Fix clearing the illegal access interrupt
+    - LP: #1473547
+  * x86/asm/irq: Stop relying on magic JMP behavior for early_idt_handlers
+    - LP: #1473547
+  * lib: Fix strnlen_user() to not touch memory after specified maximum
+    - LP: #1473547
+  * Input: elantech - fix detection of touchpads where the revision matches
+    a known rate
+    - LP: #1473547
+  * ALSA: hda/realtek - Add a fixup for another Acer Aspire 9420
+    - LP: #1473547
+  * ALSA: usb-audio: add MAYA44 USB+ mixer control names
+    - LP: #1473547
+  * ALSA: usb-audio: fix missing input volume controls in MAYA44 USB(+)
+    - LP: #1473547
+  * USB: cp210x: add ID for HubZ dual ZigBee and Z-Wave dongle
+    - LP: #1473547
+  * of/dynamic: Fix test for PPC_PSERIES
+    - LP: #1473547
+  * Input: elantech - add new icbody type
+    - LP: #1473547
+  * Input: alps - do not reduce trackpoint speed by half
+    - LP: #1473547
+  * MIPS: Fix enabling of DEBUG_STACKOVERFLOW
+    - LP: #1473547
+  * usb: musb: fix order of conditions for assigning end point operations
+    - LP: #1473547
+  * xfrm: fix a race in xfrm_state_lookup_byspi
+    - LP: #1473547
+  * iommu/vt-d: Allow RMRR on graphics devices too
+    - LP: #1473547
+  * iommu/vt-d: Fix passthrough mode with translation-disabled devices
+    - LP: #1473547
+  * ata: ahci_mvebu: Fix wrongly set base address for the MBus window
+    setting
+    - LP: #1473547
+  * ARM: dts: am335x-boneblack: disable RTC-only sleep to avoid hardware
+    damage
+    - LP: #1473547
+  * virtio_pci: Clear stale cpumask when setting irq affinity
+    - LP: #1473547
+  * irqchip: sunxi-nmi: Fix off-by-one error in irq iterator
+    - LP: #1473547
+  * pata_octeon_cf: fix broken build
+    - LP: #1473547
+  * ALSA: usb-audio: add native DSD support for JLsounds I2SoverUSB
+    - LP: #1473547
+  * Input: synaptics - add min/max quirk for Lenovo S540
+    - LP: #1473547
+  * drm/i915: Fix DDC probe for passive adapters
+    - LP: #1473547
+  * cfg80211: wext: clear sinfo struct before calling driver
+    - LP: #1473547
+  * mm/memory_hotplug.c: set zone->wait_table to null after freeing it
+    - LP: #1473547
+  * sched, numa: do not hint for NUMA balancing on VM_MIXEDMAP mappings
+    - LP: #1473547
+  * ring-buffer-benchmark: Fix the wrong sched_priority of producer
+    - LP: #1473547
+  * drm/radeon: fix freeze for laptop with Turks/Thames GPU.
+    - LP: #1473547
+  * drm/radeon: Make sure radeon_vm_bo_set_addr always unreserves the BO
+    - LP: #1473547
+  * block: fix ext_dev_lock lockdep report
+    - LP: #1473547
+  * net: bcmgenet: power on MII block for all MII modes
+    - LP: #1473547
+  * bridge: use _bh spinlock variant for br_fdb_update to avoid lockup
+    - LP: #1473547
+  * bridge: fix multicast router rlist endless loop
+    - LP: #1473547
+  * iser-target: Fix variable-length response error completion
+    - LP: #1473547
+  * iser-target: release stale iser connections
+    - LP: #1473547
+  * iser-target: Fix possible use-after-free
+    - LP: #1473547
+  * ALSA: hda - adding a DAC/pin preference map for a HP Envy TS machine
+    - LP: #1473547
+  * drm/mgag200: Reject non-character-cell-aligned mode widths
+    - LP: #1473547
+  * KVM: x86: fix lapic.timer_mode on restore
+    - LP: #1473547
+  * crypto: caam - improve initalization for context state saves
+    - LP: #1473547
+  * crypto: caam - fix RNG buffer cache alignment
+    - LP: #1473547
+  * tracing: Have filter check for balanced ops
+    - LP: #1473547
+  * drm/radeon: Add RADEON_INFO_VA_UNMAP_WORKING query
+    - LP: #1473547
+  * clk: at91: pll: fix input range validity check
+    - LP: #1473547
+  * clk: at91: fix h32mx prototype inclusion in pmc header
+    - LP: #1473547
+  * xfs: don't truncate attribute extents if no extents exist
+    - LP: #1473547
+  * Linux 3.19.8-ckt3
+    - LP: #1473547
+  * net/mlx4_core: double free of dev_vfs
+    - LP: #1473883
+  * net/mlx4_core: need to call close fw if alloc icm is called twice
+    - LP: #1473883
+  * ALSA: hda - Fix audio crackles on Dell Latitude E7x40
+    - LP: #1468582
+  * ALSA: hda - Fix noisy outputs on Dell XPS13 (2015 model)
+    - LP: #1468582
+  * ALSA: hda - restore the MIC FIXUP for some Dell machines
+    - LP: #1468582
+  * ata: ahci_platform: fix owner module reference mismatch for scsi host
+    - LP: #1473818
+  * libahci: Refactoring of ahci_single_irq_intr function.
+    - LP: #1473818
+  * libahci: Add support to handle HOST_IRQ_STAT as edge trigger latch.
+    - LP: #1473818
+  * ata: ahci_xgene: Add AHCI Support for 2nd HW version of APM X-Gene SoC
+    AHCI SATA Host controller.
+    - LP: #1473818
+  * Documentation: dts: xgene: Update interrupt field description
+    - LP: #1473818
+  * dtb: xgene: Add interrupt for Tx completion
+    - LP: #1473818
+  * drivers: net: xgene: Add separate tx completion ring
+    - LP: #1473818
+  * drivers: net: xgene: Change ring manager to use function pointers
+    - LP: #1473818
+  * drivers: net: xgene: Add ring manager v2 functions
+    - LP: #1473818
+  * drivers: net: xgene: Add 10GbE support with ring manager v2
+    - LP: #1473818
+  * drivers: net: xgene: Add SGMII based 1GbE support with ring manager v2
+    - LP: #1473818
+  * (no-up) arm64: dts: add APM Merlin Board device tree
+    - LP: #1473818
+  * SUNRPC: TCP/UDP always close the old socket before reconnecting
+    - LP: #1403152
+  * efi: Rename efi_guid_unparse to efi_guid_to_str
+    - LP: #1473341
+  * x86/efi: Add a "debug" option to the efi= cmdline
+    - LP: #1473341
+  * efi: efivar_create_sysfs_entry() should return negative error codes
+    - LP: #1473341
+  * efi: Add esrt support
+    - LP: #1473341
+  * x86, doc: Remove cmdline_size from list of fields to be filled in for
+    EFI handover
+    - LP: #1473341
+  * efi/esrt: Fix some compiler warnings
+    - LP: #1473341
+  * efi: dmi: List SMBIOS3 table before SMBIOS table
+    - LP: #1473341
+  * efi: Add 'systab' information to Documentation/ABI
+    - LP: #1473341
+  * powerpc/powernv: Move OPAL API definitions to opal-api.h
+    - LP: #1464560
+  * powerpc/powernv: Move opal-api.h closer to the Skiboot version
+    - LP: #1464560
+  * powerpc/powernv: Add interfaces for flash device access
+    - LP: #1464560
+  * mtd: powernv: Add powernv flash MTD abstraction driver
+    - LP: #1464560
+  * powerpc/powernv: Expose OPAL APIs required by PRD interface
+    - LP: #1464560
+  * powerpc/powernv: Remove powernv RTAS support
+    - LP: #1464560
+  * powerpc/powernv: Add opal-prd channel
+    - LP: #1464560
+  * powerpc/powernv: fix construction of opal PRD messages
+    - LP: #1464560
+  * powerpc/include: Add opal-prd to installed uapi headers
+    - LP: #1464560
+  * powerpc/powernv: Fix vma page prot flags in opal-prd driver
+    - LP: #1464560
+  * ipvlan: fix addr hash list corruption
+    - LP: #1475434
+  * Fix kmalloc slab creation sequence
+    - LP: #1475204
+  * sched/stop_machine: Fix deadlock between multiple stop_two_cpus()
+    - LP: #1461620
+  * net: don't wait for order-3 page allocation
+    - LP: #1479048
+  * sctp: fix ASCONF list handling
+    - LP: #1479048
+  * bridge: fix br_stp_set_bridge_priority race conditions
+    - LP: #1479048
+  * packet: read num_members once in packet_rcv_fanout()
+    - LP: #1479048
+  * packet: avoid out of bounds read in round robin fanout
+    - LP: #1479048
+  * neigh: do not modify unlinked entries
+    - LP: #1479048
+  * tcp: Do not call tcp_fastopen_reset_cipher from interrupt context
+    - LP: #1479048
+  * net/mlx4_en: Release TX QP when destroying TX ring
+    - LP: #1479048
+  * net/mlx4_en: Wake TX queues only when there's enough room
+    - LP: #1479048
+  * net/mlx4_en: Fix wrong csum complete report when rxvlan offload is
+    disabled
+    - LP: #1479048
+  * net: phy: fix phy link up when limiting speed via device tree
+    - LP: #1479048
+  * bnx2x: fix lockdep splat
+    - LP: #1479048
+  * sctp: Fix race between OOTB responce and route removal
+    - LP: #1479048
+  * amd-xgbe: Add the __GFP_NOWARN flag to Rx buffer allocation
+    - LP: #1479048
+  * net: mvneta: introduce compatible string "marvell, armada-xp-neta"
+    - LP: #1479048
+  * ARM: mvebu: update Ethernet compatible string for Armada XP
+    - LP: #1479048
+  * net: mvneta: disable IP checksum with jumbo frames for Armada 370
+    - LP: #1479048
+  * sparc: Use GFP_ATOMIC in ldc_alloc_exp_dring() as it can be called in
+    softirq context
+    - LP: #1479048
+  * s5h1420: fix a buffer overflow when checking userspace params
+    - LP: #1479048
+  * cx24116: fix a buffer overflow when checking userspace params
+    - LP: #1479048
+  * af9013: Don't accept invalid bandwidth
+    - LP: #1479048
+  * cx24117: fix a buffer overflow when checking userspace params
+    - LP: #1479048
+  * saa7164: fix querycap warning
+    - LP: #1479048
+  * cx18: add missing caps for the PCM video device
+    - LP: #1479048
+  * bus: arm-ccn: Fix node->XP config conversion
+    - LP: #1479048
+  * ARM: tegra20: Store CPU "resettable" status in IRAM
+    - LP: #1479048
+  * iio: accel: kxcjk-1013: add the "KXCJ9000" ACPI id
+    - LP: #1479048
+  * video: mxsfb: Make sure axi clock is enabled when accessing registers
+    - LP: #1479048
+  * spi: fix race freeing dummy_tx/rx before it is unmapped
+    - LP: #1479048
+  * mtd: fix: avoid race condition when accessing mtd->usecount
+    - LP: #1479048
+  * rc-core: fix dib0700 scancode generation for RC5
+    - LP: #1479048
+  * intel_pstate: set BYT MSR with wrmsrl_on_cpu()
+    - LP: #1479048
+  * leds / PM: fix hibernation on arm when gpio-led used with CPU led
+    trigger
+    - LP: #1479048
+  * crypto: talitos - avoid memleak in talitos_alg_alloc()
+    - LP: #1479048
+  * genirq: devres: Fix testing return value of request_any_context_irq()
+    - LP: #1479048
+  * ASoC: wm8737: Fixup setting VMID Impedance control register
+    - LP: #1479048
+  * ASoC: wm8903: Fix define for WM8903_VMID_RES_250K
+    - LP: #1479048
+  * media: Fix regression in some more dib0700 based devices
+    - LP: #1479048
+  * mnt: Refactor the logic for mounting sysfs and proc in a user namespace
+    - LP: #1479048
+  * ASoC: wm8955: Fix setting wrong register for WM8955_K_8_0_MASK bits
+    - LP: #1479048
+  * of/pci: Fix pci_address_to_pio() conversion of CPU address to I/O port
+    - LP: #1479048
+  * scsi_transport_srp: Introduce srp_wait_for_queuecommand()
+    - LP: #1479048
+  * scsi_transport_srp: Fix a race condition
+    - LP: #1479048
+  * IB/srp: Remove an extraneous scsi_host_put() from an error path
+    - LP: #1479048
+  * IB/srp: Fix a connection setup race
+    - LP: #1479048
+  * IB/srp: Fix connection state tracking
+    - LP: #1479048
+  * IB/srp: Fix reconnection failure handling
+    - LP: #1479048
+  * KVM: mips: use id_to_memslot correctly
+    - LP: #1479048
+  * ima: skip measurement of cgroupfs files and update documentation
+    - LP: #1479048
+  * ima: do not measure or appraise the NSFS filesystem
+    - LP: #1479048
+  * KEYS: fix "ca_keys=" partial key matching
+    - LP: #1479048
+  * PCI: Propagate the "ignore hotplug" setting to parent
+    - LP: #1479048
+  * mei: txe: reduce suspend/resume time
+    - LP: #1479048
+  * w1_therm reference count family data
+    - LP: #1479048
+  * tty/serial: at91: RS485 mode: 0 is valid for delay_rts_after_send
+    - LP: #1479048
+  * spi: orion: Fix maximum baud rates for Armada 370/XP
+    - LP: #1479048
+  * rtlwifi: Remove the clear interrupt routine from all drivers
+    - LP: #1479048
+  * drm/radeon: take the mode_config mutex when dealing with hpds (v2)
+    - LP: #1479048
+  * rcu: Correctly handle non-empty Tiny RCU callback list with none ready
+    - LP: #1479048
+  * ASoC: arizona: Fix noise generator gain TLV
+    - LP: #1479048
+  * usb: dwc3: gadget: don't clear EP_BUSY too early
+    - LP: #1479048
+  * dm cache: fix race when issuing a POLICY_REPLACE operation
+    - LP: #1479048
+  * PCI: Add pci_bus_addr_t
+    - LP: #1479048
+  * staging: rtl8712: prevent buffer overrun in recvbuf2recvframe
+    - LP: #1479048
+  * usb: core: Fix USB 3.0 devices lost in NOTATTACHED state after a hub
+    port reset
+    - LP: #1479048
+  * staging: vt6655: device_rx_srv check sk_buff is NULL
+    - LP: #1479048
+  * fixing infinite OPEN loop in 4.0 stateid recovery
+    - LP: #1479048
+  * megaraid_sas : Modify return value of megasas_issue_blocked_cmd() and
+    wait_and_poll() to consider command status returned by firmware
+    - LP: #1479048
+  * ideapad_laptop: Lenovo G50-30 fix rfkill reports wireless blocked
+    - LP: #1397021, #1479048
+  * powerpc/perf: Fix book3s kernel to userspace backtraces
+    - LP: #1479048
+  * gpio: crystalcove: set IRQCHIP_SKIP_SET_WAKE for the irqchip
+    - LP: #1479048
+  * SUNRPC: Fix a memory leak in the backchannel code
+    - LP: #1479048
+  * ipr: Increase default adapter init stage change timeout
+    - LP: #1479048
+  * Btrfs: don't invalidate root dentry when subvolume deletion fails
+    - LP: #1479048
+  * ARM: at91/dt: sama5d4ek: mci0 uses slot 0
+    - LP: #1479048
+  * mnt: Modify fs_fully_visible to deal with locked ro nodev and atime
+    - LP: #1479048
+  * ASoC: tas2552: Fix kernel crash when the codec is loaded but not part
+    of a card
+    - LP: #1479048
+  * ASoC: tas2552: Fix kernel crash caused by wrong kcontrol entry
+    - LP: #1479048
+  * drm/qxl: Do not cause spice-server to clean our objects
+    - LP: #1479048
+  * drm/qxl: Do not leak memory if qxl_release_list_add fails
+    - LP: #1479048
+  * ASoC: rt5645: Init jack_detect_work before registering irq
+    - LP: #1479048
+  * selinux: fix setting of security labels on NFS
+    - LP: #1479048
+  * ath3k: Add support of 0489:e076 AR3012 device
+    - LP: #1462614, #1479048
+  * ath3k: add support of 13d3:3474 AR3012 device
+    - LP: #1427680, #1479048
+  * Bluetooth: btusb: Fix memory leak in Intel setup routine
+    - LP: #1479048
+  * ath9k: fix DMA stop sequence for AR9003+
+    - LP: #1479048
+  * b43: fix support for 14e4:4321 PCI dev with BCM4321 chipset
+    - LP: #1479048
+  * cdc-acm: Add support of ATOL FPrint fiscal printers
+    - LP: #1479048
+  * NFC: st21nfcb: Remove inappropriate kfree on a devm_kzalloc pointer
+    - LP: #1479048
+  * NFC: st21nfcb: Do not remove header once the payload is sent
+    - LP: #1479048
+  * NFC: st21nfcb: remove st21nfcb_nci_i2c_disable
+    - LP: #1479048
+  * PCI: pciehp: Wait for hotplug command completion where necessary
+    - LP: #1479048
+  * regulator: core: fix constraints output buffer
+    - LP: #1479048
+  * ACPI / PM: Add missing pm_generic_complete() invocation
+    - LP: #1479048
+  * x86/PCI: Use host bridge _CRS info on Foxconn K8M890-8237A
+    - LP: #1479048
+  * pinctrl: mvebu: armada-38x: fix PCIe functions
+    - LP: #1479048
+  * pinctrl: mvebu: armada-370: fix spi0 pin description
+    - LP: #1479048
+  * pinctrl: mvebu: armada-375: remove non-existing NAND re/we pins
+    - LP: #1479048
+  * pinctrl: mvebu: armada-xp: remove non-existing NAND pins
+    - LP: #1479048
+  * pinctrl: mvebu: armada-xp: remove non-existing VDD cpu_pd functions
+    - LP: #1479048
+  * pinctrl: mvebu: armada-xp: fix functions of MPP48
+    - LP: #1479048
+  * pinctrl: mvebu: armada-375: remove incorrect space in pin description
+    - LP: #1479048
+  * pinctrl: mvebu: armada-38x: fix incorrect total number of GPIOs
+    - LP: #1479048
+  * i2c: at91: fix a race condition when using the DMA controller
+    - LP: #1479048
+  * dmaengine: mv_xor: bug fix for racing condition in descriptors cleanup
+    - LP: #1479048
+  * ASoC: wm8960: the enum of "DAC Polarity" should be wm8960_enum[1]
+    - LP: #1479048
+  * arm64: Do not attempt to use init_mm in reset_context()
+    - LP: #1479048
+  * ext4: fix race between truncate and __ext4_journalled_writepage()
+    - LP: #1479048
+  * Disable write buffering on Toshiba ToPIC95
+    - LP: #1479048
+  * mei: me: wait for power gating exit confirmation
+    - LP: #1479048
+  * fs/ufs: revert "ufs: fix deadlocks introduced by sb mutex merge"
+    - LP: #1479048
+  * jbd2: use GFP_NOFS in jbd2_cleanup_journal_tail()
+    - LP: #1479048
+  * regmap: Fix regmap_bulk_read in BE mode
+    - LP: #1479048
+  * jbd2: fix ocfs2 corrupt when updating journal superblock fails
+    - LP: #1479048
+  * ideapad: fix software rfkill setting
+    - LP: #1479048
+  * fs/ufs: restore s_lock mutex
+    - LP: #1479048
+  * regmap: Fix possible shift overflow in regmap_field_init()
+    - LP: #1479048
+  * ima: fix ima_show_template_data_ascii()
+    - LP: #1479048
+  * ima: add support for new "euid" policy condition
+    - LP: #1479048
+  * ima: extend "mask" policy matching support
+    - LP: #1479048
+  * nfs: increase size of EXCHANGE_ID name string buffer
+    - LP: #1479048
+  * vTPM: set virtual device before passing to ibmvtpm_reset_crq
+    - LP: #1479048
+  * Input: pixcir_i2c_ts - fix receive error
+    - LP: #1479048
+  * arm: KVM: force execution of HCPTR access on VM exit
+    - LP: #1479048
+  * ARM: kvm: psci: fix handling of unimplemented functions
+    - LP: #1479048
+  * arm64: entry: fix context tracking for el0_sp_pc
+    - LP: #1479048
+  * i2c: mux: Use __i2c_transfer() instead of calling parent's
+    master_xfer()
+    - LP: #1479048
+  * i2c: mux: pca954x: Use __i2c_transfer because of quirks
+    - LP: #1479048
+  * arm64: mm: Fix freeing of the wrong memmap entries with
+    !SPARSEMEM_VMEMMAP
+    - LP: #1479048
+  * dm space map metadata: fix occasional leak of a metadata block on
+    resize
+    - LP: #1479048
+  * KVM: arm/arm64: vgic: Avoid injecting reserved IRQ numbers
+    - LP: #1479048
+  * ARM: mvebu: fix suspend to RAM on big-endian configurations
+    - LP: #1479048
+  * dm stats: fix divide by zero if 'number_of_areas' arg is zero
+    - LP: #1479048
+  * x86/PCI: Use host bridge _CRS info on systems with >32 bit addressing
+    - LP: #1479048
+  * pNFS: Fix a memory leak when attempted pnfs fails
+    - LP: #1479048
+  * NFS: Ensure we set NFS_CONTEXT_RESEND_WRITES when requeuing writes
+    - LP: #1479048
+  * ACPI / PNP: Avoid conflicting resource reservations
+    - LP: #1479048
+  * Bluetooth: ath3k: add support of 04ca:300f AR3012 device
+    - LP: #1449730, #1479048
+  * Bluetooth: ath3k: Add support of 04ca:300d AR3012 device
+    - LP: #1394368, #1479048
+  * libata: Do not blacklist Micron M500DC
+    - LP: #1479048
+  * arm64: vdso: work-around broken ELF toolchains in Makefile
+    - LP: #1479048
+  * iommu/amd: Handle large pages correctly in free_pagetable
+    - LP: #1479048
+  * ext4: call sync_blockdev() before invalidate_bdev() in put_super()
+    - LP: #1479048
+  * MIPS: Fix KVM guest fixmap address
+    - LP: #1479048
+  * xfs: fix remote symlinks on V5/CRC filesystems
+    - LP: #1479048
+  * ext4: don't retry file block mapping on bigalloc fs with non-extent
+    file
+    - LP: #1479048
+  * drm/dp/mst: make sure mst_primary mstb is valid in work function
+    - LP: #1479048
+  * drm/dp/mst: take lock around looking up the branch device on hpd irq
+    - LP: #1479048
+  * NET: ROSE: Don't dereference NULL neighbour pointer.
+    - LP: #1479048
+  * netfilter: nf_qeueue: Drop queue entries on nf_unregister_hook
+    - LP: #1479048
+  * of/address: use atomic allocation in pci_register_io_range()
+    - LP: #1479048
+  * fs: Fix S_NOSEC handling
+    - LP: #1479048
+  * stmmac: troubleshoot unexpected bits in des0 & des1
+    - LP: #1479048
+  * ACPI / resources: free memory on error in add_region_before()
+    - LP: #1479048
+  * PM / sleep: Increase default DPM watchdog timeout to 60
+    - LP: #1479048
+  * rtc: snvs: fix wakealarm by call enable_irq_wake earlier
+    - LP: #1479048
+  * ARC: add compiler barrier to LLSC based cmpxchg
+    - LP: #1479048
+  * ARC: add smp barriers around atomics per Documentation/atomic_ops.txt
+    - LP: #1479048
+  * mm: kmemleak: allow safe memory scanning during kmemleak disabling
+    - LP: #1479048
+  * mm: kmemleak_alloc_percpu() should follow the gfp from per_alloc()
+    - LP: #1479048
+  * drm/dp/mst: close deadlock in connector destruction.
+    - LP: #1479048
+  * dell-laptop: Fix allocating & freeing SMI buffer page
+    - LP: #1479048
+  * ALSA: hda - Fix Dock Headphone on Thinkpad X250 seen as a Line Out
+    - LP: #1479048
+  * ALSA: hda - set proper caps for newer AMD hda audio in KB/KV
+    - LP: #1479048
+  * s390/kdump: fix REGSET_VX_LOW vector register ELF notes
+    - LP: #1479048
+  * ARM64: smp: Fix suspicious RCU usage with ipi tracepoints
+    - LP: #1479048
+  * arm64: bpf: fix out-of-bounds read in bpf2a64_offset()
+    - LP: #1479048
+  * tracing/filter: Do not WARN on operand count going below zero
+    - LP: #1479048
+  * tracing/filter: Do not allow infix to exceed end of string
+    - LP: #1479048
+  * arm64: bpf: fix endianness conversion bugs
+    - LP: #1479048
+  * clocksource: exynos_mct: Avoid blocking calls in the cpu hotplug
+    notifier
+    - LP: #1479048
+  * ALSA: hda - Add headset support to Acer Aspire V5
+    - LP: #1479048
+  * ALSA: hda - Fix the dock headphone output on Fujitsu Lifebook E780
+    - LP: #1479048
+  * agp/intel: Fix typo in needs_ilk_vtd_wa()
+    - LP: #1479048
+  * drm/i915: fix backlight after resume on 855gm
+    - LP: #1479048
+  * drm/radeon: compute ring fix hibernation (CI GPU family) v2.
+    - LP: #1479048
+  * drm/radeon: SDMA fix hibernation (CI GPU family).
+    - LP: #1479048
+  * crush: fix a bug in tree bucket decode
+    - LP: #1479048
+  * rbd: use GFP_NOIO in rbd_obj_request_create()
+    - LP: #1479048
+  * arm64: Don't report clear pmds and puds as huge
+    - LP: #1479048
+  * fuse: initialize fc->release before calling it
+    - LP: #1479048
+  * vfs: Ignore unlocked mounts in fs_fully_visible
+    - LP: #1479048
+  * VFS: Introduce inode-getting helpers for layered/unioned fs
+    environments
+    - LP: #1479048
+  * fs: Add helper functions for permanently empty directories.
+    - LP: #1479048
+  * sysctl: Allow creating permanently empty directories that serve as
+    mountpoints.
+    - LP: #1479048
+  * proc: Allow creating permanently empty directories that serve as mount
+    points
+    - LP: #1479048
+  * kernfs: Add support for always empty directories.
+    - LP: #1479048
+  * sysfs: Add support for permanently empty directories to serve as mount
+    points.
+    - LP: #1479048
+  * sysfs: Create mountpoints with sysfs_create_mount_point
+    - LP: #1479048
+  * mnt: Update fs_fully_visible to test for permanently empty directories
+    - LP: #1479048
+  * vfs: Remove incorrect debugging WARN in prepend_path
+    - LP: #1479048
+  * hwmon: (nct7802) fix visibility of temp3
+    - LP: #1479048
+  * hwmon: (mcp3021) Fix broken output scaling
+    - LP: #1479048
+  * ACPICA: Tables: Enable both 32-bit and 64-bit FACS
+    - LP: #1479048
+  * ACPICA: Tables: Fix an issue that FACS initialization is performed
+    twice
+    - LP: #1479048
+  * ACPICA: Tables: Enable default 64-bit FADT addresses favor
+    - LP: #1479048
+  * KVM: x86: make vapics_in_nmi_mode atomic
+    - LP: #1479048
+  * KVM: x86: properly restore LVT0
+    - LP: #1479048
+  * KVM: s390: virtio-ccw: don't overwrite config space values
+    - LP: #1479048
+  * 9p: forgetting to cancel request on interrupted zero-copy RPC
+    - LP: #1479048
+  * bridge: multicast: restore router configuration on port link down/up
+    - LP: #1479048
+  * ath10k: clear htt.freq
+    - LP: #1479048
+  * cfg80211: ignore netif running state when changing iftype
+    - LP: #1479048
+  * mm/hugetlb: introduce minimum hugepage order
+    - LP: #1479048
+  * mmc: sdhci: Restore behavior while creating OCR mask
+    - LP: #1479048
+  * hrtimer: Allow concurrent hrtimer_start() for self restarting timers
+    - LP: #1479048
+  * ARM: dove: fix legacy dove IRQ numbers
+    - LP: #1479048
+  * sched/fair: Prevent throttling in early pick_next_task_fair()
+    - LP: #1479048
+  * watchdog: omap: assert the counter being stopped before reprogramming
+    - LP: #1479048
+  * ufs: Fix possible deadlock when looking up directories
+    - LP: #1479048
+  * net: dsa: bcm_sf2: properly propagate carrier down state for MoCA
+    - LP: #1479048
+  * gpiolib: Add missing dummies for the unified device properties
+    interface
+    - LP: #1479048
+  * ASoC: imx-wm8962: Add a missing error check
+    - LP: #1479048
+  * phy: twl4030-usb: remove incorrect pm_runtime_get_sync() in probe
+    function.
+    - LP: #1479048
+  * IB/mlx4: Convert slave port before building address-handle
+    - LP: #1479048
+  * drm/tegra: dpaux: Fix transfers larger than 4 bytes
+    - LP: #1479048
+  * ath10k: add extra check for frame tracing
+    - LP: #1479048
+  * perf: Fix ring_buffer_attach() RCU sync, again
+    - LP: #1479048
+  * mmc: card: Fixup request missing in mmc_blk_issue_rw_rq
+    - LP: #1479048
+  * ipip: fix one sparse error
+    - LP: #1479048
+  * __bitmap_parselist: fix bug in empty string handling
+    - LP: #1479048
+  * powerpc/pseries: Fix possible leaked device node reference
+    - LP: #1479048
+  * ath9k_htc: memory corruption calling set_bit()
+    - LP: #1479048
+  * ARM: 8371/1: always select IRQ_WORK on SMP
+    - LP: #1479048
+  * tty: remove platform_sysrq_reset_seq
+    - LP: #1479048
+  * ath10k: fix insufficient tracing buffer size
+    - LP: #1479048
+  * pktgen: adjust flag NO_TIMESTAMP to be more pktgen compliant
+    - LP: #1479048
+  * mtd: dc21285: use raw spinlock functions for nw_gpio_lock
+    - LP: #1479048
+  * rndis_wlan: harmless issue calling set_bit()
+    - LP: #1479048
+  * clk: ti: dra7-atl-clock: Fix possible ERR_PTR dereference
+    - LP: #1479048
+  * MIPS: Octeon: Set OHCI and EHCI MMIO byte order to match CPU
+    - LP: #1479048
+  * NFS: Fix size of NFSACL SETACL operations
+    - LP: #1479048
+  * security_syslog() should be called once only
+    - LP: #1479048
+  * pktgen: adjust spacing in proc file interface output
+    - LP: #1479048
+  * ARM: 8372/1: KGDB does not build on BE32
+    - LP: #1479048
+  * of: return NUMA_NO_NODE from fallback of_node_to_nid()
+    - LP: #1479048
+  * HID: i2c-hid: fix harmless test_bit() issue
+    - LP: #1479048
+  * iwlwifi: mvm: fix ROC reference accounting
+    - LP: #1479048
+  * samples/bpf: fix in-source build of samples with clang
+    - LP: #1479048
+  * ACPI / init: Switch over platform to the ACPI mode later
+    - LP: #1479048
+  * HID: rmi: fix some harmless BIT() mistakes
+    - LP: #1479048
+  * mac80211: prevent possible crypto tx tailroom corruption
+    - LP: #1479048
+  * mac80211: fix the beacon csa counter for mesh and ibss
+    - LP: #1479048
+  * USB: devio: fix a condition in async_completed()
+    - LP: #1479048
+  * e1000e: Cleanup handling of VLAN_HLEN as a part of max frame size
+    - LP: #1479048
+  * clk: Fix JSON output in debugfs
+    - LP: #1479048
+  * net/mlx4_core: Enhance the MAD_IFC wrapper to convert VF port to
+    physical
+    - LP: #1479048
+  * Btrfs: lock superblock before remounting for rw subvol
+    - LP: #1479048
+  * Linux 3.19.8-ckt4
+    - LP: #1479048
+
+  [ Ubuntu: 3.19.0-25.26 ]
+
+  * SAUCE: KEYS: ensure we free the assoc array edit if edit is valid
+    - CVE-2015-1333
+  * x86/asm/entry/64: Fold the 'test_in_nmi' macro into its only user
+  * x86/asm/entry/64: Remove a redundant jump
+  * x86/nmi: Enable nested do_nmi handling for 64-bit kernels
+  * x86/nmi/64: Remove asm code that saves cr2
+  * x86/nmi/64: Switch stacks on userspace NMI entry
+    - CVE-2015-3290, CVE-2015-5157
+  * x86/nmi/64: Improve nested NMI comments
+  * x86/nmi/64: Reorder nested NMI checks
+  * x86/nmi/64: Use DF to avoid userspace RSP confusing nested NMI
+    detection
+    - CVE-2015-3291
+
+  [ Ubuntu: 3.19.0-24.25 ]
+
+  * Release Tracking Bug
+    - LP: #1477250
+  * SAUCE: fan: tunnel multiple mapping mode (v3)
+    - LP: #1470091
+
+  [ Ubuntu: 3.19.0-23.24 ]
+
+  * Release Tracking Bug
+    - LP: #1472346
+  * SAUCE: Don't use atomic read in evlist.c
+    - LP: #1410673
+
+  [ Ubuntu: 3.19.0-23.23 ]
+
+  * Release Tracking Bug
+    - LP: #1472048
+  * [Config] Add CRYPTO_DEV_NX_*, 842_* as modules
+    - LP: #1454687
+  * SAUCE: i915_bpo: drm/i915/audio: add codec wakeup override
+    enabled/disable callback
+    - LP: #1460674
+  * SAUCE: Backport I915_OVERLAY_DISABLE_DEST_COLORKEY
+    - LP: #1460674
+  * SAUCE: i915_bpo: Rebase to drm-intel-next-fixes-2015-05-29
+    - LP: #1460674
+  * SAUCE: i915_bpo: Revert "drm/i915: Implement the intel_dp_autotest_edid
+    function for DP EDID complaince tests"
+    - LP: #1460674
+  * SAUCE: i915_bpo: Revert "drm/i915: Add debugfs test control files for
+    Displayport compliance testing"
+    - LP: #1460674
+  * SAUCE: Load i915_bpo from the hda driver on SKL/CHV
+    - LP: #1460674
+  * SAUCE: i915_bpo: Don't try to support BXT
+    - LP: #1460674
+  * SAUCE: i915_bpo: drm/i915/skl: Fix DMC API version.
+  * Revert "usb: dwc2: add bus suspend/resume for dwc2"
+    - LP: #1471252
+  * Revert "HID: logitech-hidpp: support combo keyboard touchpad TK820"
+    - LP: #1471252
+  * Revert "KVM: x86: drop fpu_activate hook"
+    - LP: #1471252
+  * Revert "libceph: clear r_req_lru_item in __unregister_linger_request()"
+    - LP: #1471252
+  * drm/i915: add component support
+    - LP: #1460661
+  * ALSA: hda: export struct hda_intel
+    - LP: #1460661
+  * ALSA: hda: pass intel_hda to all i915 interface functions
+    - LP: #1460661
+  * ALSA: hda: add component support
+    - LP: #1460661
+  * drm/atomic-helpers: Fix documentation typos and wrong copy&paste
+    - LP: #1460674
+  * drm/atomic: Rename drm_atomic_helper_commit_pre_planes() state argument
+    - LP: #1460674
+  * drm/atomic-helper: Rename commmit_post/pre_planes
+    - LP: #1460674
+  * drm/atomic-helpers: make mode_set hooks optional
+    - LP: #1460674
+  * drm/atomic-helper: Fix kerneldoc for prepare_planes
+    - LP: #1460674
+  * drm: Complete moving rotation property to core
+    - LP: #1460674
+  * drm: Share plane pixel format check code between legacy and atomic
+    - LP: #1460674
+  * drm/atomic: Constify a bunch of functions pointer structs
+    - LP: #1460674
+  * drm: Fix some typo mistake of the annotations
+    - LP: #1460674
+  * drm: change connector to tmp_connector
+    - LP: #1460674
+  * drm: atomic: Expose CRTC active property
+    - LP: #1460674
+  * drm: atomic: Allow setting CRTC active property
+    - LP: #1460674
+  * drm/atomic-helpers: Properly avoid full modeset dance
+    - LP: #1460674
+  * drm/atomic: Add helpers for state-subclassing drivers
+    - LP: #1460674
+  * drm: Fix some typos
+    - LP: #1460674
+  * drm/atomic: Add for_each_{connector,crtc,plane}_in_state helper macros
+    - LP: #1460674
+  * drm/atomic-helper: Don't call atomic_update_plane when it stays off
+    - LP: #1460674
+  * drm/atomic-helper: Really recover pre-atomic plane/cursor behavior
+    - LP: #1460674
+  * drm/atomic: Make mode_fixup() optional for check_modeset()
+    - LP: #1460674
+  * drm/atomic-helpers: Update vblank timestamping constants
+    - LP: #1460674
+  * drm/atomic-helpers: Export
+    drm_atomic_helper_update_legacy_modeset_state
+    - LP: #1460674
+  * drm/atomic: add drm_atomic_get_existing_*_state helpers
+    - LP: #1460674
+  * drm/atomic: remove duplicated assignment of old_plane_state
+    - LP: #1460674
+  * drm/atomic: Allow drivers to subclass drm_atomic_state, v3
+    - LP: #1460674
+  * drm/dp: indentation and ordering cleanups
+    - LP: #1460674
+  * drm/dp: add DPCD definitions from eDP 1.2
+    - LP: #1460674
+  * drm/dp: add DPCD definitions from DP 1.1 and 1.2a
+    - LP: #1460674
+  * drm/dp: add DPCD definitions from eDP 1.4
+    - LP: #1460674
+  * drm: Adding drm helper function drm_plane_from_index().
+    - LP: #1460674
+  * ALSA: hda - reset display codec when power on
+    - LP: #1460674
+  * drm/i915/audio: add codec wakeup override enabled/disable callback
+    - LP: #1460674
+  * scsi: storvsc: Increase the ring buffer size
+    - LP: #1445195
+  * scsi: storvsc: Size the queue depth based on the ringbuffer size
+    - LP: #1445195
+  * scsi: storvsc: Always send on the selected outgoing channel
+    - LP: #1445195
+  * scsi: storvsc: Retrieve information about the capability of the target
+    - LP: #1445195
+  * scsi: storvsc: Don't assume that the scatterlist is not chained
+    - LP: #1445195
+  * scsi: storvsc: Set the tablesize based on the information given by the
+    host
+    - LP: #1445195
+  * Drivers: hv: vmbus: Add support for VMBus panic notifier handler
+    - LP: #1463584
+  * Drivers: hv: vmbus: Correcting truncation error for constant
+    HV_CRASH_CTL_CRASH_NOTIFY
+    - LP: #1463584
+  * net: eth: xgene: change APM X-Gene SoC platform ethernet to support
+    ACPI
+    - LP: #1458042
+  * net: eth: xgene: devm_ioremap() returns NULL on error
+    - LP: #1458042
+  * drivers: net: xgene: Make xgene_enet_of_match depend on CONFIG_OF
+    - LP: #1458042
+  * Documentation: dts: Update compatible field description for APM X-Gene
+    - LP: #1458042
+  * dtb: change binding name to match with newer firmware DT
+    - LP: #1458042
+  * drivers: net: xgene: fix new firmware backward compatibility with older
+    driver
+    - LP: #1458042
+  * net: eth: xgene: fix booting with devicetree
+    - LP: #1458042
+  * drivers: net: xgene: constify of_device_id array
+    - LP: #1458042
+  * Documentation: dtb: Add port-id field for APM X-Gene ethernet
+    - LP: #1458042
+  * dtb: xgene: Add second SGMII based 1G interface node
+    - LP: #1458042
+  * drivers: net: xgene: Add second SGMII based 1G interface
+    - LP: #1458042
+  * x86/fpu: Disable XSAVES* support for now
+    - LP: #1468797
+  * powerpc: export of_get_ibm_chip_id function
+    - LP: #1454687
+  * powerpc: Add ICSWX instruction
+    - LP: #1454687
+  * lib: add software 842 compression/decompression
+    - LP: #1454687
+  * crypto: 842 - change 842 alg to use software
+    - LP: #1454687
+  * crypto: nx - rename nx-842.c to nx-842-pseries.c
+    - LP: #1454687
+  * crypto: nx - add NX-842 platform frontend driver
+    - LP: #1454687
+  * crypto: nx - add nx842 constraints
+    - LP: #1454687
+  * crypto: nx - add PowerNV platform NX-842 driver
+    - LP: #1454687
+  * crypto: nx - simplify pSeries nx842 driver
+    - LP: #1454687
+  * crypto: nx - add hardware 842 crypto comp alg
+    - LP: #1454687
+  * lib: make lib/842 decompress functions static
+    - LP: #1454687
+  * lib: correct 842 decompress for 32 bit
+    - LP: #1454687
+  * crypto: nx - remove 842-nx null checks
+    - LP: #1454687
+  * crypto: nx - prevent nx 842 load if no hw driver
+    - LP: #1454687
+  * crypto: nx - fix nx-842 pSeries driver minimum buffer size
+    - LP: #1454687
+  * crypto: nx - move include/linux/nx842.h into drivers/crypto/nx/nx-842.h
+    - LP: #1454687
+  * crypto: nx - replace NX842_MEM_COMPRESS with function
+    - LP: #1454687
+  * crypto: nx - add LE support to pSeries platform driver
+    - LP: #1454687
+  * net/mlx4_en: Disbale GRO for incoming loopback/selftest packets
+    - LP: #1432848
+  * mm/slab_common: support the slub_debug boot option on specific object
+    size
+    - LP: #1456952
+  * perf trace: Fix race condition at the end of started workloads
+    - LP: #1410673
+  * kvm: x86: fix kvm_apic_has_events to check for NULL pointer
+  * cpuidle: powernv/pseries: Auto-promotion of snooze to deeper idle state
+    - LP: #1470404
+  * IB/ipoib: change init sequence ordering
+    - LP: #1467912
+  * IB/ipoib: factor out ah flushing
+    - LP: #1467912
+  * HID: add ALWAYS_POLL quirk for a Logitech 0xc007
+    - LP: #1471252
+  * HID: add HP OEM mouse to quirk ALWAYS_POLL
+    - LP: #1471252
+  * HID: add quirk for PIXART OEM mouse used by HP
+    - LP: #1471252
+  * usb: dwc2: hcd: use new USB_RESUME_TIMEOUT
+    - LP: #1471252
+  * usb: isp1760: hcd: use new USB_RESUME_TIMEOUT
+    - LP: #1471252
+  * nfsd: fix nsfd startup race triggering BUG_ON
+    - LP: #1471252
+  * jhash: Update jhash_[321]words functions to use correct initval
+    - LP: #1471252
+  * firmware/ihex2fw.c: restore missing default in switch statement
+    - LP: #1471252
+  * bridge/mdb: remove wrong use of NLM_F_MULTI
+    - LP: #1471252
+  * iio/axp288_adc: add missing channel info mask
+    - LP: #1471252
+  * iio: light: hid-sensor-prox: Fix modifier
+    - LP: #1471252
+  * iio: pressure: hid-sensor-press: Fix modifier
+    - LP: #1471252
+  * iio: adc: xilinx: Fix register addresses
+    - LP: #1471252
+  * iio: adc: xilinx: Fix "vccaux" channel .address
+    - LP: #1471252
+  * iio: adc: xilinx: Fix VREFP scale
+    - LP: #1471252
+  * iio: adc: xilinx: Fix VREFN sign
+    - LP: #1471252
+  * libata: Add helper to determine when PHY events should be ignored
+    - LP: #1471252
+  * libata: Ignore spurious PHY event on LPM policy change
+    - LP: #1471252
+  * iio:st_sensors: Fix oops when probing SPI devices
+    - LP: #1471252
+  * usb: gadget: configfs: Fix interfaces array NULL-termination
+    - LP: #1471252
+  * rtlwifi: rtl8192cu: Fix kernel deadlock
+    - LP: #1471252
+  * USB: cp210x: add ID for KCF Technologies PRN device
+    - LP: #1471252
+  * USB: pl2303: Remove support for Samsung I330
+    - LP: #1471252
+  * USB: visor: Match I330 phone more precisely
+    - LP: #1471252
+  * net: can: xilinx_can: fix extended frame handling
+    - LP: #1471252
+  * nfsd: fix the check for confirmed openowner in
+    nfs4_preprocess_stateid_op
+    - LP: #1471252
+  * svcrpc: fix potential GSSX_ACCEPT_SEC_CONTEXT decoding failures
+    - LP: #1471252
+  * ACPI / init: Fix the ordering of acpi_reserve_resources()
+    - LP: #1471252
+  * md/raid5: don't record new size if resize_stripes fails.
+    - LP: #1471252
+  * sched: Handle priority boosted tasks proper in setscheduler()
+    - LP: #1471252
+  * staging: vt6656: use ieee80211_tx_info to select packet type.
+    - LP: #1471252
+  * staging: vt6655: device_free_tx_buf use only
+    ieee80211_tx_status_irqsafe
+    - LP: #1471252
+  * staging: vt6655: Fix 80211 control and management status reporting.
+    - LP: #1471252
+  * staging: vt6655: lock MACvWriteBSSIDAddress.
+    - LP: #1471252
+  * arm64: bpf: fix signedness bug in loading 64-bit immediate
+    - LP: #1471252
+  * xhci: fix isoc endpoint dequeue from advancing too far on transaction
+    error
+    - LP: #1471252
+  * xhci: Solve full event ring by increasing TRBS_PER_SEGMENT to 256
+    - LP: #1471252
+  * xhci: gracefully handle xhci_irq dead device
+    - LP: #1471252
+  * ARC: unbork !LLSC build
+    - LP: #1471252
+  * staging: gdm724x: Correction of variable usage after applying ALIGN()
+    - LP: #1471252
+  * usb-storage: Add NO_WP_DETECT quirk for Lacie 059f:0651 devices
+    - LP: #1471252
+  * tty/n_gsm.c: fix a memory leak when gsmtty is removed
+    - LP: #1471252
+  * pty: Fix input race when closing
+    - LP: #1429756, #1471252
+  * ARM: net fix emit_udiv() for BPF_ALU | BPF_DIV | BPF_K intruction.
+    - LP: #1471252
+  * x86/vdso: Fix the x86 vdso2c tool includes
+    - LP: #1471252
+  * x86/vdso: Fix 'make bzImage' on older distros
+    - LP: #1471252
+  * perf/x86/rapl: Enable Broadwell-U RAPL support
+    - LP: #1471252
+  * net: qca_spi: Fix possible race during probe
+    - LP: #1471252
+  * drm/radeon: fix VM_CONTEXT*_PAGE_TABLE_END_ADDR handling
+    - LP: #1471252
+  * RDMA/core: Fix for parsing netlink string attribute
+    - LP: #1471252
+  * drm/radeon: add new bonaire pci id
+    - LP: #1471252
+  * parisc,metag: Fix crashes due to stack randomization on
+    stack-grows-upwards architectures
+    - LP: #1471252
+  * net: phy: micrel: Fix regression in kszphy_probe
+    - LP: #1471252
+  * firmware: dmi_scan: Fix ordering of product_uuid
+    - LP: #1471252
+  * ext4: fix NULL pointer dereference when journal restart fails
+    - LP: #1471252
+  * ext4: check for zero length extent explicitly
+    - LP: #1471252
+  * jbd2: fix r_count overflows leading to buffer overflow in journal
+    recovery
+    - LP: #1471252
+  * tools/vm: fix page-flags build
+    - LP: #1471252
+  * mm, numa: really disable NUMA balancing by default on single node
+    machines
+    - LP: #1471252
+  * igb: Fix oops on changing number of rings
+    - LP: #1471252
+  * power/reset: at91: fix return value check in
+    at91_reset_platform_probe()
+    - LP: #1471252
+  * spi: bitbang: Make setup_transfer() callback optional
+    - LP: #1471252
+  * iwlwifi: pcie: prevent using unmapped memory in fw monitor
+    - LP: #1471252
+  * x86: bpf_jit: fix FROM_BE16 and FROM_LE16/32 instructions
+    - LP: #1471252
+  * igb: Fix NULL assignment to incorrect variable in igb_reset_q_vector
+    - LP: #1471252
+  * thermal: rockchip: fix an error code
+    - LP: #1471252
+  * ARM: net: delegate filter to kernel interpreter when imm_offset()
+    return value can't fit into 12bits.
+    - LP: #1471252
+  * ALSA: hda - Add headphone quirk for Lifebook E752
+    - LP: #1471252
+  * ASoC: mc13783: Fix wrong mask value used in mc13xxx_reg_rmw() calls
+    - LP: #1471252
+  * ASoC: uda1380: Avoid accessing i2c bus when codec is disabled
+    - LP: #1471252
+  * clk: exynos5420: Restore GATE_BUS_TOP on suspend
+    - LP: #1471252
+  * thermal: armada: Update Armada 380 thermal sensor coefficients
+    - LP: #1471252
+  * ALSA: hda/realtek - Support Dell headset mode for ALC256
+    - LP: #1471252
+  * ALSA: hda - fix headset mic detection problem for one more machine
+    - LP: #1447909, #1471252
+  * ALSA: hda - Add headset mic quirk for Dell Inspiron 5548
+    - LP: #1452175, #1471252
+  * mac80211: move WEP tailroom size check
+    - LP: #1471252
+  * KVM: MMU: fix smap permission check
+    - LP: #1471252
+  * KVM: MMU: fix CR4.SMEP=1, CR0.WP=0 with shadow pages
+    - LP: #1471252
+  * KVM: MMU: fix SMAP virtualization
+    - LP: #1471252
+  * powerpc/mce: fix off by one errors in mce event handling
+    - LP: #1471252
+  * ASoC: dapm: Modify widget stream name according to prefix
+    - LP: #1471252
+  * ASoC: wm8960: fix "RINPUT3" audio route error
+    - LP: #1471252
+  * ASoC: wm8994: correct BCLK DIV 348 to 384
+    - LP: #1471252
+  * ktime: Optimize ktime_divns for constant divisors
+    - LP: #1471252
+  * ktime: Fix ktime_divns to do signed division
+    - LP: #1471252
+  * Input: elantech - fix semi-mt protocol for v3 HW
+    - LP: #1471252
+  * powerpc: Align TOC to 256 bytes
+    - LP: #1471252
+  * ALSA: hda - Add Conexant codecs CX20721, CX20722, CX20723 and CX20724
+    - LP: #1454656, #1471252
+  * ALSA: hda/realtek - ALC292 dock fix for Thinkpad L450
+    - LP: #1471252
+  * mmc: atmel-mci: fix bad variable type for clkdiv
+    - LP: #1471252
+  * sd: Disable support for 256 byte/sector disks
+    - LP: #1471252
+  * s390/mm: correct return value of pmd_pfn
+    - LP: #1471252
+  * xen/events: don't bind non-percpu VIRQs with percpu chip
+    - LP: #1471252
+  * kvm: fix crash in kvm_vcpu_reload_apic_access_page
+    - LP: #1471252
+  * kvm/fpu: Enable eager restore kvm FPU for MPX
+    - LP: #1471252
+  * libceph: request a new osdmap if lingering request maps to no osd
+    - LP: #1471252
+  * drm/radeon: retry dcpd fetch
+    - LP: #1471252
+  * crypto: s390/ghash - Fix incorrect ghash icv buffer handling.
+    - LP: #1471252
+  * ipvs: fix memory leak in ip_vs_ctl.c
+    - LP: #1471252
+  * rtnl/bond: don't send rtnl msg for unregistered iface
+    - LP: #1471252
+  * net: sched: fix call_rcu() race on classifier module unloads
+    - LP: #1471252
+  * conntrack: RFC5961 challenge ACK confuse conntrack LAST-ACK transition
+    - LP: #1471252
+  * net: phy: Allow EEE for all RGMII variants
+    - LP: #1471252
+  * bridge: fix parsing of MLDv2 reports
+    - LP: #1471252
+  * cdc_ncm: Fix tx_bytes statistics
+    - LP: #1471252
+  * ipv4: Avoid crashing in ip_error
+    - LP: #1471252
+  * ipv6: do not delete previously existing ECMP routes if add fails
+    - LP: #1471252
+  * net/ipv6/udp: Fix ipv6 multicast socket filter regression
+    - LP: #1471252
+  * ipv6: fix ECMP route replacement
+    - LP: #1471252
+  * tcp/ipv6: fix flow label setting in TIME_WAIT state
+    - LP: #1471252
+  * staging: vt6655: move setting of PSTxDesc->buff_addr to vnt_tx_packet
+    - LP: #1471252
+  * staging: vt6655: Fix TD_FLAGS_NETIF_SKB only on TYPE_AC0DMA
+    - LP: #1471252
+  * staging: vt6655: vnt_tx_packet fix dma_idx selection.
+    - LP: #1471252
+  * staging: vt6655: vnt_tx_packet Correct TX order of OWNED_BY_NIC
+    - LP: #1471252
+  * staging: vt6655: [BUG] Protect MACvSelectPage1 with lock.
+    - LP: #1471252
+  * net: core: Correct an over-stringent device loop detection.
+    - LP: #1471252
+  * x86: bpf_jit: fix compilation of large bpf programs
+    - LP: #1471252
+  * net: dp83640: fix broken calibration routine.
+    - LP: #1471252
+  * net: dp83640: reinforce locking rules.
+    - LP: #1471252
+  * net: dp83640: fix improper double spin locking.
+    - LP: #1471252
+  * unix/caif: sk_socket can disappear when state is unlocked
+    - LP: #1471252
+  * xen/netback: Properly initialize credit_bytes
+    - LP: #1471252
+  * net_sched: invoke ->attach() after setting dev->qdisc
+    - LP: #1471252
+  * sctp: Fix mangled IPv4 addresses on a IPv6 listening socket
+    - LP: #1471252
+  * bridge: fix br_multicast_query_expired() bug
+    - LP: #1471252
+  * udp: fix behavior of wrong checksums
+    - LP: #1471252
+  * xen: netback: read hotplug script once at start of day.
+    - LP: #1471252
+  * ipv4/udp: Verify multicast group is ours in upd_v4_early_demux()
+    - LP: #1471252
+  * bridge: disable softirqs around br_fdb_update to avoid lockup
+    - LP: #1471252
+  * tcp: fix child sockets to use system default congestion control if not
+    set
+    - LP: #1471252
+  * be2net: Replace dma/pci_alloc_coherent() calls with
+    dma_zalloc_coherent()
+    - LP: #1471252
+  * drm/radeon: partially revert "fix VM_CONTEXT*_PAGE_TABLE_END_ADDR
+    handling"
+    - LP: #1471252
+  * Linux 3.19.8-ckt2
+    - LP: #1471252
+
+  [ Ubuntu: 3.19.0-22.22 ]
+
+  * Release Tracking Bug
+    - LP: #1465755
+  * SAUCE: power: reset: Add syscon reboot device node for APM X-Gene
+    platform
+    - LP: #1463211
+  * Revert "dm crypt: fix deadlock when async crypto algorithm returns
+    -EBUSY"
+    - LP: #1465696
+  * Bluetooth: ath3k: Add a new ID 0cf3:e006 to ath3k list
+    - LP: #1459934
+  * cdc-acm: prevent infinite loop when parsing CDC headers.
+    - LP: #1460657
+  * (upstream) libata: Blacklist queued TRIM on all Samsung 800-series
+    - LP: #1338706, #1449005
+  * powerpc/powernv: Check image loaded or not before calling flash
+    - LP: #1461553
+  * ahci: avoton port-disable reset-quirk
+    - LP: #1458617
+  * Bluetooth: btusb: support public address configuration for ath3012
+    - LP: #1459937
+  * Bluetooth: btusb: Add setup callback for chip init on USB
+    - LP: #1459937
+  * Bluetooth: btusb: Add support for QCA ROME chipset family
+    - LP: #1459937
+  * Bluetooth: btusb: Fix incorrect type in qca_device_info
+    - LP: #1459937
+  * Bluetooth: btusb: Fix minor whitespace issue in QCA ROME device entries
+    - LP: #1459937
+  * Bluetooth: btusb: Add support for 0cf3:e007
+    - LP: #1459937
+  * storvsc: Set the SRB flags correctly when no data transfer is needed
+    - LP: #1439780
+  * vfs: read file_handle only once in handle_to_path
+    - LP: #1416503
+    - CVE-2015-1420
+  * ozwpan: Use unsigned ints to prevent heap overflow
+    - LP: #1463442
+    - CVE-2015-4001
+  * ozwpan: divide-by-zero leading to panic
+    - LP: #1463445
+    - CVE-2015-4003
+  * ozwpan: Use proper check to prevent heap overflow
+    - LP: #1463444
+    - CVE-2015-4002
+  * ozwpan: unchecked signed subtraction leads to DoS
+    - LP: #1463444
+    - CVE-2015-4002
+  * enclosure: fix WARN_ON removing an adapter in multi-path devices
+    - LP: #1415178
+  * ASoC: tfa9879: Fix return value check in tfa9879_i2c_probe()
+    - LP: #1465696
+  * ASoC: samsung: s3c24xx-i2s: Fix return value check in
+    s3c24xx_iis_dev_probe()
+    - LP: #1465696
+  * ASoC: dapm: Enable autodisable on SOC_DAPM_SINGLE_TLV_AUTODISABLE
+    - LP: #1465696
+  * ASoC: rt5677: add register patch for PLL
+    - LP: #1465696
+  * btrfs: unlock i_mutex after attempting to delete subvolume during send
+    - LP: #1465696
+  * ALSA: hda - Fix mute-LED fixed mode
+    - LP: #1465696
+  * ALSA: hda - Add mute-LED mode control to Thinkpad
+    - LP: #1465696
+  * arm64: dma-mapping: always clear allocated buffers
+    - LP: #1465696
+  * ALSA: emu10k1: Fix card shortname string buffer overflow
+    - LP: #1465696
+  * ALSA: emux: Fix mutex deadlock at unloading
+    - LP: #1465696
+  * drm/radeon: Use drm_calloc_ab for CS relocs
+    - LP: #1465696
+  * drm/radeon: adjust pll when audio is not enabled
+    - LP: #1465696
+  * drm/radeon: add SI DPM quirk for Sapphire R9 270 Dual-X 2G GDDR5
+    - LP: #1465696
+  * drm/radeon: fix lockup when BOs aren't part of the VM on release
+    - LP: #1465696
+  * drm/radeon: reset BOs address after clearing it.
+    - LP: #1465696
+  * drm/radeon: check new address before removing old one
+    - LP: #1465696
+  * SCSI: add 1024 max sectors black list flag
+    - LP: #1465696
+  * 3w-sas: fix command completion race
+    - LP: #1465696
+  * 3w-xxxx: fix command completion race
+    - LP: #1465696
+  * 3w-9xxx: fix command completion race
+    - LP: #1465696
+  * uas: Allow uas_use_uas_driver to return usb-storage flags
+    - LP: #1465696
+  * uas: Add US_FL_MAX_SECTORS_240 flag
+    - LP: #1465696
+  * uas: Set max_sectors_240 quirk for ASM1053 devices
+    - LP: #1465696
+  * usb: chipidea: otg: remove mutex unlock and lock while stop and start
+    role
+    - LP: #1465696
+  * serial: xilinx: Use platform_get_irq to get irq description structure
+    - LP: #1465696
+  * serial: of-serial: Remove device_type = "serial" registration
+    - LP: #1465696
+  * tty/serial: at91: maxburst was missing for dma transfers
+    - LP: #1465696
+  * ALSA: emux: Fix mutex deadlock in OSS emulation
+    - LP: #1465696
+  * ACPI / SBS: Enable battery manager when present
+    - LP: #1465696
+  * ALSA: emu10k1: Emu10k2 32 bit DMA mode
+    - LP: #1465696
+  * ASoC: rt5677: fixed wrong DMIC ref clock
+    - LP: #1465696
+  * rbd: end I/O the entire obj_request on error
+    - LP: #1465696
+  * ext4: fix data corruption caused by unwritten and delayed extents
+    - LP: #1465696
+  * ext4: move check under lock scope to close a race.
+    - LP: #1465696
+  * powerpc/pseries: Correct cpu affinity for dlpar added cpus
+    - LP: #1465696
+  * powerpc/powernv: Restore non-volatile CRs after nap
+    - LP: #1465696
+  * efivarfs: Ensure VariableName is NUL-terminated
+    - LP: #1465696
+  * x86/efi: Store upper bits of command line buffer address in
+    ext_cmd_line_ptr
+    - LP: #1465696
+  * blk-mq: fix race between timeout and CPU hotplug
+    - LP: #1465696
+  * blk-mq: fix CPU hotplug handling
+    - LP: #1465696
+  * writeback: use |1 instead of +1 to protect against div by zero
+    - LP: #1465696
+  * ARM: mvebu: armada-xp-openblocks-ax3-4: Disable internal RTC
+    - LP: #1465696
+  * ARM: dts: imx23-olinuxino: Fix polarity of LED GPIO
+    - LP: #1465696
+  * ARM: dts: imx23-olinuxino: Fix dr_mode of usb0
+    - LP: #1465696
+  * ARM: dts: imx6: phyFLEX: USB VBUS control is active-high
+    - LP: #1465696
+  * ARM: dts: imx25: Add #pwm-cells to pwm4
+    - LP: #1465696
+  * ARM: dts: imx28: Fix AUART4 TX-DMA interrupt name
+    - LP: #1465696
+  * marvell-ccic: fix Y'CbCr ordering
+    - LP: #1465696
+  * gpio: sysfs: fix memory leaks and device hotplug
+    - LP: #1465696
+  * ACPI / SBS: Add 5 us delay to fix SBS hangs on MacBook
+    - LP: #1465696
+  * ACPI / PNP: add two IDs to list for PNPACPI device enumeration
+    - LP: #1465696
+  * ARM: OMAP2+: Fix omap off idle power consumption creeping up
+    - LP: #1465696
+  * ARM: dts: OMAP3-N900: Add microphone bias voltages
+    - LP: #1465696
+  * drm/radeon: disable semaphores for UVD V1 (v2)
+    - LP: #1465696
+  * x86/spinlocks: Fix regression in spinlock contention detection
+    - LP: #1465696
+  * RDMA/CMA: Canonize IPv4 on IPV6 sockets properly
+    - LP: #1465696
+  * drm/i915: Assume dual channel LVDS if pixel clock necessitates it
+    - LP: #1465696
+  * drm/i915: Add missing MacBook Pro models with dual channel LVDS
+    - LP: #1465696
+  * efi: Fix error handling in add_sysfs_runtime_map_entry()
+    - LP: #1465696
+  * xen/events: Clear cpu_evtchn_mask before resuming
+    - LP: #1465696
+  * xen/xenbus: Update xenbus event channel on resume
+    - LP: #1465696
+  * xen/console: Update console event channel on resume
+    - LP: #1465696
+  * xen/events: Set irq_info->evtchn before binding the channel to CPU in
+    __startup_pirq()
+    - LP: #1465696
+  * mm/memory-failure: call shake_page() when error hits thp tail page
+    - LP: #1465696
+  * mm: soft-offline: fix num_poisoned_pages counting on concurrent events
+    - LP: #1465696
+  * nilfs2: fix sanity check of btree level in nilfs_btree_root_broken()
+    - LP: #1465696
+  * ocfs2: dlm: fix race between purge and get lock resource
+    - LP: #1465696
+  * drm/i915/dp: there is no audio on port A
+    - LP: #1465696
+  * drm/amdkfd: allow unregister process with queues
+    - LP: #1465696
+  * drm/radeon: fix userptr BO unpin bug v3
+    - LP: #1465696
+  * drm/radeon: make VCE handle check more strict
+    - LP: #1465696
+  * drm/radeon: make UVD handle checking more strict
+    - LP: #1465696
+  * drm/radeon: more strictly validate the UVD codec
+    - LP: #1465696
+  * path_openat(): fix double fput()
+    - LP: #1465696
+  * mnt: Fix fs_fully_visible to verify the root directory is visible
+    - LP: #1465696
+  * drm: Zero out invalid vblank timestamp in drm_update_vblank_count.
+    - LP: #1465696
+  * ARM: ux500: Move GPIO regulator for SD-card into board DTSs
+    - LP: #1465696
+  * ARM: ux500: Enable GPIO regulator for SD-card for HREF boards
+    - LP: #1465696
+  * ARM: ux500: Enable GPIO regulator for SD-card for snowball
+    - LP: #1465696
+  * xen-pciback: Add name prefix to global 'permissive' variable
+    - LP: #1465696
+  * mmc: core: add missing pm event in mmc_pm_notify to fix hib restore
+    - LP: #1465696
+  * ARM: dts: am57xx-beagle-x15: Fix IRQ type for mcp7941x
+    - LP: #1465696
+  * mmc: sh_mmcif: Fix timeout value for command request
+    - LP: #1465696
+  * pinctrl: Don't just pretend to protect pinctrl_maps, do it for real
+    - LP: #1465696
+  * arm64: add missing PAGE_ALIGN() to __dma_free()
+    - LP: #1465696
+  * Linux 3.19.8-ckt1
+    - LP: #1465696
+
+  [ Ubuntu: 3.19.0-21.21 ]
+
+  * SAUCE: overlayfs: when copying up and reading directories ensure
+    mounter had permissions V2
+    - CVE-2015-1328
+
+  [ Ubuntu: 3.19.0-20.20 ]
+
+  * Release Tracking Bug
+    - LP: #1459957
+  * Revert "SAUCE: Call i915_bpo specific functions from the hda driver"
+    - LP: #1457369
+
+  [ Ubuntu: 3.19.0-19.19 ]
+
+  * Release Tracking Bug
+    - LP: #1458964
+  * SAUCE: (no-up) [PCIE] APM X-Gene: Remove debug messages in MSI
+    interrupt handler path.
+    - LP: #1451593
+  * [Config] updateconfigs for 3.19.7 stable update
+  * [Config] armhf: CPUFREQ_DT=y
+    - LP: #1457781
+  * annotations: enforce CPUFREQ_DT
+    - LP: #1457781
+  * SAUCE: (no-up) Add MSI/MSI-X driver for APM PCI bus
+    - LP: #1451593
+  * SAUCE: i915_bpo: Rebase to v4.1-rc4.
+    - LP: #1456123
+  * SAUCE: i915_bpo: Revert dma-buf: cleanup dma_buf_export() to make it
+    easily extensible
+    - LP: #1456123
+  * SAUCE: (no-up) pci-xgene-msi: fixed deadlock in irq_set_affinity
+    - LP: #1451593
+  * Revert "nfs: replace nfs_add_stats with nfs_inc_stats when add one"
+    - LP: #1454699
+  * cpufreq: powernv: Report cpu frequency throttling
+    - LP: #1452547
+  * x86: kvm: Revert "remove sched notifier for cross-cpu migrations"
+    - LP: #1450584
+  * x86: vdso: fix pvclock races with task migration
+    - LP: #1450584
+  * ip_forward: Drop frames with attached skb->sk
+    - LP: #1454699
+  * net: add skb_checksum_complete_unset
+    - LP: #1454699
+  * ppp: call skb_checksum_complete_unset in ppp_receive_frame
+    - LP: #1454699
+  * tcp: fix possible deadlock in tcp_send_fin()
+    - LP: #1454699
+  * tcp: avoid looping in tcp_send_fin()
+    - LP: #1454699
+  * net: do not deplete pfmemalloc reserve
+    - LP: #1454699
+  * net: fix crash in build_skb()
+    - LP: #1454699
+  * pxa168: fix double deallocation of managed resources
+    - LP: #1454699
+  * net/mlx4_en: Prevent setting invalid RSS hash function
+    - LP: #1454699
+  * md: fix md io stats accounting broken
+    - LP: #1454699
+  * x86/asm/decoder: Fix and enforce max instruction size in the insn
+    decoder
+    - LP: #1454699
+  * sched/idle/x86: Restore mwait_idle() to fix boot hangs, to improve
+    power savings and to improve performance
+    - LP: #1454699
+  * sched/idle/x86: Optimize unnecessary mwait_idle() resched IPIs
+    - LP: #1454699
+  * perf/x86/intel: Fix Core2,Atom,NHM,WSM cycles:pp events
+    - LP: #1454699
+  * KVM: x86: Fix MSR_IA32_BNDCFGS in msrs_to_save
+    - LP: #1454699
+  * Btrfs: fix log tree corruption when fs mounted with -o discard
+    - LP: #1454699
+  * btrfs: don't accept bare namespace as a valid xattr
+    - LP: #1454699
+  * Btrfs: fix inode eviction infinite loop after cloning into it
+    - LP: #1454699
+  * Btrfs: fix inode eviction infinite loop after extent_same ioctl
+    - LP: #1454699
+  * usb: gadget: printer: enqueue printer's response for setup request
+    - LP: #1454699
+  * KVM: s390: fix handling of write errors in the tpi handler
+    - LP: #1454699
+  * KVM: s390: reinjection of irqs can fail in the tpi handler
+    - LP: #1454699
+  * KVM: s390: Zero out current VMDB of STSI before including level3 data.
+    - LP: #1454699
+  * KVM: s390: no need to hold the kvm->mutex for floating interrupts
+    - LP: #1454699
+  * KVM: s390: fix get_all_floating_irqs
+    - LP: #1454699
+  * s390/hibernate: fix save and restore of kernel text section
+    - LP: #1454699
+  * KVM: use slowpath for cross page cached accesses
+    - LP: #1454699
+  * KVM: arm/arm64: check IRQ number on userland injection
+    - LP: #1454699
+  * KVM: arm/arm64: vgic: vgic_init returns -ENODEV when no online vcpu
+    - LP: #1454699
+  * ARM: KVM: Fix size check in __coherent_cache_guest_page
+    - LP: #1454699
+  * arm64: KVM: Fix stage-2 PGD allocation to have per-page refcounting
+    - LP: #1454699
+  * arm64: KVM: Do not use pgd_index to index stage-2 pgd
+    - LP: #1454699
+  * arm/arm64: KVM: Keep elrsr/aisr in sync with software model
+    - LP: #1454699
+  * MIPS: KVM: Handle MSA Disabled exceptions from guest
+    - LP: #1454699
+  * MIPS: lose_fpu(): Disable FPU when MSA enabled
+    - LP: #1454699
+  * MIPS: Malta: Detect and fix bad memsize values
+    - LP: #1454699
+  * MIPS: asm: asm-eva: Introduce kernel load/store variants
+    - LP: #1454699
+  * MIPS: Loongson-3: Add IRQF_NO_SUSPEND to Cascade irqaction
+    - LP: #1454699
+  * MIPS: Hibernate: flush TLB entries earlier
+    - LP: #1454699
+  * staging: panel: fix lcd type
+    - LP: #1454699
+  * staging: android: sync: Fix memory corruption in
+    sync_timeline_signal().
+    - LP: #1454699
+  * staging: vt6655: use ieee80211_tx_info to select packet type.
+    - LP: #1454699
+  * drivers/base: cacheinfo: validate device node for all the caches
+    - LP: #1454699
+  * cdc-wdm: fix endianness bug in debug statements
+    - LP: #1454699
+  * mmc: sunxi: Use devm_reset_control_get_optional() for reset control
+    - LP: #1454699
+  * spi: imx: read back the RX/TX watermark levels earlier
+    - LP: #1454699
+  * spi: spidev: fix possible arithmetic overflow for multi-transfer
+    message
+    - LP: #1454699
+  * compal-laptop: Fix leaking hwmon device
+    - LP: #1454699
+  * compal-laptop: Check return value of power_supply_register
+    - LP: #1454699
+  * ring-buffer: Replace this_cpu_*() with __this_cpu_*()
+    - LP: #1454699
+  * power_supply: twl4030_madc: Check return value of power_supply_register
+    - LP: #1454699
+  * power_supply: lp8788-charger: Fix leaked power supply on probe fail
+    - LP: #1454699
+  * power_supply: ipaq_micro_battery: Fix leaking workqueue
+    - LP: #1454699
+  * power_supply: ipaq_micro_battery: Check return values in probe
+    - LP: #1454699
+  * NFS: fix BUG() crash in notify_change() with patch to chown_common()
+    - LP: #1454699
+  * ARM: fix broken hibernation
+    - LP: #1454699
+  * ARM: 8320/1: fix integer overflow in ELF_ET_DYN_BASE
+    - LP: #1454699
+  * ARM: mvebu: Disable CPU Idle on Armada 38x
+    - LP: #1454699
+  * ARM: S3C64XX: Use fixed IRQ bases to avoid conflicts on Cragganmore
+    - LP: #1454699
+  * ARM: at91/dt: sama5d3 xplained: add phy address for macb1
+    - LP: #1454699
+  * ARM: dts: dove: Fix uart[23] reg property
+    - LP: #1454699
+  * ARM: dts: fix mmc node updates for exynos5250-spring
+    - LP: #1454699
+  * usb: musb: core: fix TX/RX endpoint order
+    - LP: #1454699
+  * usb: phy: Find the right match in devm_usb_phy_match
+    - LP: #1454699
+  * usb: define a generic USB_RESUME_TIMEOUT macro
+    - LP: #1454699
+  * usb: musb: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: oxu210hp: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: fusbh200: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: uhci: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: fotg210: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: r8a66597: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: isp116x: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: xhci: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: ehci: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: host: sl811: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * usb: core: hub: use new USB_RESUME_TIMEOUT
+    - LP: #1454699
+  * clk: at91: usb: propagate rate modification to the parent clk
+    - LP: #1454699
+  * ALSA: hda - Add dock support for ThinkPad X250 (17aa:2226)
+    - LP: #1454699
+  * ALSA: emu10k1: don't deadlock in proc-functions
+    - LP: #1454699
+  * ALSA: hda/realtek - Enable the ALC292 dock fixup on the Thinkpad T450
+    - LP: #1454699
+  * ALSA: hda - fix "num_steps = 0" error on ALC256
+    - LP: #1446517, #1454699
+  * ALSA: hda/realtek - Fix Headphone Mic doesn't recording for ALC256
+    - LP: #1454699
+  * Input: elantech - fix absolute mode setting on some ASUS laptops
+    - LP: #1454699
+  * mfd: core: Fix platform-device name collisions
+    - LP: #1454699
+  * fs/binfmt_elf.c: fix bug in loading of PIE binaries
+    - LP: #1454699
+  * ptrace: fix race between ptrace_resume() and wait_task_stopped()
+    - LP: #1454699
+  * NFC: st21nfcb: Retry i2c_master_send if it returns a negative value
+    - LP: #1454699
+  * rtlwifi: rtl8192cu: Add new USB ID
+    - LP: #1454699
+  * rtlwifi: rtl8192cu: Add new device ID
+    - LP: #1454699
+  * ext4: make fsync to sync parent dir in no-journal for real this time
+    - LP: #1454699
+  * mnt: Improve the umount_tree flags
+    - LP: #1454699
+  * mnt: Don't propagate umounts in __detach_mounts
+    - LP: #1454699
+  * perf symbols: Define STT_GNU_IFUNC for glibc 2.9 and older.
+    - LP: #1454699
+  * perf tools: Fix perf-read-vdsox32 not building and lib64 install dir
+    - LP: #1454699
+  * perf tools: Work around lack of sched_getcpu in glibc < 2.6.
+    - LP: #1454699
+  * tools lib traceevent kbuffer: Remove extra update to data pointer in
+    PADDING
+    - LP: #1454699
+  * tools/power turbostat: Use $(CURDIR) instead of $(PWD) and add support
+    for O= option in Makefile
+    - LP: #1454699
+  * UBI: account for bitflips in both the VID header and data
+    - LP: #1454699
+  * UBI: fix out of bounds write
+    - LP: #1454699
+  * UBI: initialize LEB number variable
+    - LP: #1454699
+  * UBI: fix check for "too many bytes"
+    - LP: #1454699
+  * scsi: storvsc: Fix a bug in copy_from_bounce_buffer()
+    - LP: #1454699
+  * target: Fix COMPARE_AND_WRITE with SG_TO_MEM_NOALLOC handling
+    - LP: #1454699
+  * target/file: Fix BUG() when CONFIG_DEBUG_SG=y and DIF protection
+    enabled
+    - LP: #1454699
+  * target/file: Fix UNMAP with DIF protection support
+    - LP: #1454699
+  * target/file: Fix SG table for prot_buf initialization
+    - LP: #1454699
+  * iser-target: Fix session hang in case of an rdma read DIF error
+    - LP: #1454699
+  * iser-target: Fix possible deadlock in RDMA_CM connection error
+    - LP: #1454699
+  * Bluetooth: ath3k: Add support Atheros AR5B195 combo Mini PCIe card
+    - LP: #1454699
+  * arm64: fix midr range for Cortex-A57 erratum 832075
+    - LP: #1454699
+  * arm64: head.S: ensure visibility of page tables
+    - LP: #1454699
+  * arm64: apply alternatives for !SMP kernels
+    - LP: #1454699
+  * arm64: errata: add workaround for cortex-a53 erratum #845719
+    - LP: #1454699
+  * powerpc/powernv: Don't map M64 segments using M32DT
+    - LP: #1454699
+  * powerpc: Fix missing L2 cache size in /sys/devices/system/cpu
+    - LP: #1454699
+  * powerpc/cell: Fix crash in iic_setup_cpu() after per_cpu changes
+    - LP: #1454699
+  * powerpc/cell: Fix cell iommu after it_page_shift changes
+    - LP: #1454699
+  * ASoC: cs4271: Increase delay time after reset
+    - LP: #1454699
+  * ASoC: wm8741: Fix rates constraints values
+    - LP: #1454699
+  * ASoC: davinci-evm: drop un-necessary remove function
+    - LP: #1454699
+  * ASoC: pcm512x: Add 'Analogue' prefix to analogue volume controls
+    - LP: #1454699
+  * ACPICA: Utilities: split IO address types from data type models.
+    - LP: #1454699
+  * ACPICA: Tables: Don't release ACPI_MTX_TABLES in
+    acpi_tb_install_standard_table().
+    - LP: #1454699
+  * ACPI / scan: Annotate physical_node_lock in acpi_scan_is_offline()
+    - LP: #1454699
+  * xtensa: xtfpga: fix hardware lockup caused by LCD driver
+    - LP: #1454699
+  * xtensa: provide __NR_sync_file_range2 instead of __NR_sync_file_range
+    - LP: #1454699
+  * xtensa: ISS: fix locking in TAP network adapter
+    - LP: #1454699
+  * gpio: mvebu: Fix mask/unmask managment per irq chip type
+    - LP: #1454699
+  * clk: samsung: exynos4: Disable ARMCLK down feature on Exynos4210 SoC
+    - LP: #1454699
+  * clk: tegra: Register the proper number of resets
+    - LP: #1454699
+  * clk: qcom: Fix i2c frequency table
+    - LP: #1454699
+  * clk: qcom: fix RCG M/N counter configuration
+    - LP: #1454699
+  * dm crypt: fix deadlock when async crypto algorithm returns -EBUSY
+    - LP: #1454699
+  * sd: Unregister integrity profile
+    - LP: #1454699
+  * sd: Fix missing ATO tag check
+    - LP: #1454699
+  * Drivers: hv: vmbus: Fix a bug in the error path in vmbus_open()
+    - LP: #1454699
+  * mvsas: fix panic on expander attached SATA devices
+    - LP: #1454699
+  * rc: img-ir: fix error in parameters passed to irq_free()
+    - LP: #1454699
+  * stk1160: Make sure current buffer is released
+    - LP: #1454699
+  * IB/core: disallow registering 0-sized memory region
+    - LP: #1454699
+  * IB/core: don't disallow registering region starting at 0x0
+    - LP: #1454699
+  * IB/mlx4: Fix WQE LSO segment calculation
+    - LP: #1454699
+  * IB/iser: Fix wrong calculation of protection buffer length
+    - LP: #1454699
+  * tracing: Handle ftrace_dump() atomic context in graph_trace_open()
+    - LP: #1454699
+  * tracing: Fix incorrect enabling of trace events by boot cmdline
+    - LP: #1454699
+  * i2c: mux: use proper dev when removing "channel-X" symlinks
+    - LP: #1454699
+  * i2c: rk3x: report number of messages transmitted
+    - LP: #1454699
+  * i2c: core: Export bus recovery functions
+    - LP: #1454699
+  * drm/radeon: fix doublescan modes (v2)
+    - LP: #1454699
+  * drm/i915: Dont enable CS_PARSER_ERROR interrupts at all
+    - LP: #1454699
+  * drm: adv7511: Fix DDC error interrupt handling
+    - LP: #1454699
+  * drm: adv7511: Fix nested sleep when reading EDID
+    - LP: #1454699
+  * drm/i915: vlv: fix save/restore of GFX_MAX_REQ_COUNT reg
+    - LP: #1454699
+  * drm/i915: cope with large i2c transfers
+    - LP: #1454699
+  * RCU pathwalk breakage when running into a symlink overmounting
+    something
+    - LP: #1454699
+  * nfsd4: disallow ALLOCATE with special stateids
+    - LP: #1454699
+  * nfsd4: fix READ permission checking
+    - LP: #1454699
+  * nfsd4: disallow SEEK with special stateids
+    - LP: #1454699
+  * nfsd: eliminate NFSD_DEBUG
+    - LP: #1454699
+  * NFS: Add a stub for GETDEVICELIST
+    - LP: #1454699
+  * e1000: add dummy allocator to fix race condition between mtu change and
+    netpoll
+    - LP: #1454699
+  * mac80211: send AP probe as unicast again
+    - LP: #1454699
+  * ebpf: verifier: check that call reg with ARG_ANYTHING is initialized
+    - LP: #1454699
+  * lib: memzero_explicit: use barrier instead of OPTIMIZER_HIDE_VAR
+    - LP: #1454699
+  * wl18xx: show rx_frames_per_rates as an array as it really is
+    - LP: #1454699
+  * crypto: omap-aes - Fix support for unequal lengths
+    - LP: #1454699
+  * C6x: time: Ensure consistency in __init
+    - LP: #1454699
+  * memstick: mspro_block: add missing curly braces
+    - LP: #1454699
+  * drivers: platform: parse IRQ flags from resources
+    - LP: #1454699
+  * driver core: bus: Goto appropriate labels on failure in bus_add_device
+    - LP: #1454699
+  * netfilter: bridge: really save frag_max_size between PRE and
+    POST_ROUTING
+    - LP: #1454699
+  * Linux 3.19.7
+    - LP: #1454699
+  * bpf: fix 64-bit divide
+    - LP: #1454702
+  * route: Use ipv4_mtu instead of raw rt_pmtu
+    - LP: #1454702
+  * mlx4: Fix tx ring affinity_mask creation
+    - LP: #1454702
+  * cxgb4: Fix MC1 memory offset calculation
+    - LP: #1454702
+  * net/mlx4_en: Schedule napi when RX buffers allocation fails
+    - LP: #1454702
+  * ipv4: Missing sk_nulls_node_init() in ping_unhash().
+    - LP: #1454702
+  * clk: at91: usb: fix determine_rate prototype
+    - LP: #1454702
+  * Linux 3.19.8
+    - LP: #1454702
+  * mmc: card: Don't access RPMB partitions for normal read/write
+    - LP: #1454013
+  * (upstream) gpio: dwapb: re-enable GPIO_DWAPB for arm64
+    - LP: #1455105
+  * iwlwifi: mvm: fix BT coex shared antenna activity check
+    - LP: #1442411
+  * ext4: allocate entire range in zero range
+    - LP: #1425270
+    - CVE-2015-0275
+  * kernel.h: implement DIV_ROUND_CLOSEST_ULL
+    - LP: #1456123
+  * drm: fix drm_mode_getconnector() locking imbalance regression
+    - LP: #1456123
+  * drm/i915/skl: Fix WaDisableChickenBitTSGBarrierAckForFFSliceCS
+    - LP: #1456123
+  * vhost/scsi: potential memory corruption
+    - LP: #1457807
+    - CVE-2015-4036
+  * SAUCE: i915_bpo: drm/i915: Implement chv display PHY lane stagger setup
+    - LP: #1456123
+  * SAUCE: i915_bpo: drm/i915: Work around DISPLAY_PHY_CONTROL register
+    corruption on CHV
+    - LP: #1456123
+  * SAUCE: i915_bpo: Revert "drm/i915: Hack to tie both common lanes
+    together on chv"
+    - LP: #1456123
+
  -- Paolo Pisati <paolo.pisati@canonical.com>  Mon, 17 Aug 2015 15:11:25 -0700
 
 linux-bcm2709 (3.19.1-13.13) vivid; urgency=low
